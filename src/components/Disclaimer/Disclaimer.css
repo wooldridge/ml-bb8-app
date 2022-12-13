@@ -1,0 +1,5 @@
+.bg-world {
+  background: url('./bg.png');
+  background-position: center;
+  background-size: cover;
+}

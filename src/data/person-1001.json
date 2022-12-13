@@ -1,0 +1,70 @@
+{
+  "firstName": "Yevhen",
+  "lastName": "Moisiuk",
+  "rank": "Lieutenant General",
+  "dob": "1979-10-07",
+  "pob": "Chernivtsi, Ukraine",
+  "currentLocation": "Zhytomyr B2",
+  "position": "Major General Lead Commander",
+  "assignment": "24th Ukrainian Mechanized Brigade",
+  "image": "sodol.png",
+  "careerHistory": [
+    {
+      "start": "2000",
+      "end": "2004",
+      "description": "Airborne platoon commander later airborne company commander, 25 separate airborne"
+    },
+    {
+      "start": "2004",
+      "end": "2005",
+      "description": "Mechanized platoon commander, 73 separate mechanized infantry battalion (BTR and BRDM), 7 detached"
+    },
+    {
+      "start": "2008",
+      "end": "2009",
+      "description": "Chief of Operations (S-3), Ukrainian National Contingent in Kosovo"
+    },
+    {
+      "start": "2011",
+      "end": "2014",
+      "description": "Airborne platoon commander later airborne company commander, 25 separate airborne brigade"
+    }
+  ],
+  "directSubordinates": [
+    {
+      "formation": "347th IT and Signal Center, Zhytomyr",
+      "firstName": "Yevhen",
+      "middleName": "",
+      "lastName": "MOISIUK",
+      "image": "subordinate-1.jpg"
+    },
+    {
+      "formation": "80th Air Assault Brigade, Lviv",
+      "firstName": "Anatolij",
+      "middleName": "Serhijovych",
+      "lastName": "Ivanchenko",
+      "image": "subordinate-2.jpg"
+    },
+    {
+      "formation": "46th Air Assault Brigade, Poltava",
+      "firstName": "Mykhailo",
+      "middleName": "",
+      "lastName": "Zabrodskyi",
+      "image": "subordinate-3.jpg"
+    },
+    {
+      "formation": "45th Air Assault Brigade, Bolhrad",
+      "firstName": "Artem",
+      "middleName": "Havrylovych",
+      "lastName": "Sakhno",
+      "image": "subordinate-4.jpg"
+    },
+    {
+      "formation": "23rd Tank Battalion, Velykyi Kobylyn",
+      "firstName": "Petro",
+      "middleName": "Rostyslavovych",
+      "lastName": "Bilous",
+      "image": "subordinate-5.jpg"
+    }
+  ]
+}
