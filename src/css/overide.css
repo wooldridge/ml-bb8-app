@@ -113,6 +113,8 @@ body {
 .card {
   border-radius: 2px;
   color: white;
+  --bs-card-border-color: none;
+  box-shadow: none !important;
 }
 
 .card-title {
@@ -137,7 +139,8 @@ body {
   cursor: pointer;
 }
 
-.btn-secondary-small {
+.btn-secondary-small,
+.btn-cancel {
   background-color: transparent;
   max-height: 35px;
   border-radius: 4px;
@@ -146,6 +149,11 @@ body {
   color: #ffffff;
   padding: 6px 10px;
   cursor: pointer;
+}
+
+.btn-secondary-small:hover {
+  background: #34b6a3;
+  border: 1px solid #2dfee1;
 }
 
 .btn-primary-outline {
@@ -241,6 +249,10 @@ table {
 
 .navbar-nav .dropdown-menu {
   position: absolute !important;
+}
+
+.accordion {
+  --bs-accordion-border-color: none;
 }
 
 .accordion-button::after {
@@ -483,6 +495,12 @@ table {
 
 .accordion-body {
   border-bottom: solid 1px rgba(24, 25, 29, 0.9);
+  color: white;
+  padding: 0;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
 }
 
 .form-label {
@@ -605,7 +623,7 @@ table tbody tr td {
   position: absolute;
   top: 146px;
   left: 10px;
-  width: 15%;
+  width: 20%;
   display: inline-block;
 }
 .tab-content.selected {
@@ -798,4 +816,81 @@ table tbody tr td {
   text-align: center;
   align-self: center;
   padding: 30px 0 30px 0;
+}
+
+.form-check-input {
+  width: 19px;
+  height: 19px;
+  margin-right: 14px;
+}
+
+.form-check-input.unchecked {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-body-inner {
+  border-radius: 2px;
+}
+
+.card-body-inner.checked {
+  background-color: #35383a;
+}
+
+.accordion-button {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-check-label {
+  position: absolute;
+  top: 6px;
+}
+
+.requests-close {
+  background: #27292f;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 0.8rem;
+}
+
+.requests-title {
+  font-size: 18px;
+}
+
+.card-requests {
+  background: #00040f;
+  border-radius: 0;
+  position: absolute;
+  top: -16px;
+  right: -12px;
+  border-top: solid 1px #272a33;
+}
+
+.tag-requests {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 3px 6px 4px;
+  margin: 3px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.tag-requests:hover {
+  border: 1px solid #2dfee1;
+  color: #2dfee1;
+  cursor: pointer;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.link-white,
+.link-white:hover {
+  color: white;
+}
+
+.form-control-position {
+  resize: vertical;
 }

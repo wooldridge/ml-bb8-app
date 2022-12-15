@@ -1,4 +1,3 @@
-import AccordionsList from '../AccordionsList/AccordionsList';
 import Alert from '../Alert/Alert';
 import MilitaryBase from '../MilitaryBase/MilitaryBase';
 import Navbar from '../Navbar/Navbar';
@@ -6,14 +5,20 @@ import NewTicket from '../NewTicket/NewTicket';
 import Sidebar from '../Sidebar/Sidebar';
 import Convoy from '../Convoy/Convoy';
 import PersonDetails from '../PersonDetails/PersonDetails';
+import AccordionFilters from '../AccordionFilters/AccordionFilters';
+import Position from '../Details/Position/Position';
+import Requests from '../Requests/Requests';
 
 import personToDisplay from '../../data/person-1002.json';
 import convoyToDisplay from '../../data/convoy-1.json';
+import DateOfBirth from '../DateOfBirth/DateOfBirth';
+import Photo from '../Photo/Photo';
+import CareerHistory from '../CareerHistory/CareerHistory';
 
 function Map() {
   return (
     <div>
-      <Alert />
+      {/* <Alert /> */}
       <Navbar />
       <Sidebar />
       <div
@@ -35,12 +40,18 @@ function Map() {
           }}
         >
           {/* <MilitaryBase /> */}
-          <Convoy convoy={convoyToDisplay} />
+          {/* <Convoy convoy={convoyToDisplay} /> */}
           {/* <NewTicket /> */}
-          <PersonDetails person={personToDisplay} />
+          {/* <PersonDetails person={personToDisplay} /> */}
+          {/* <Position />
+          <DateOfBirth /> */}
+          {/* <Photo /> */}
+          <CareerHistory />
+          {/* <Requests /> */}
         </div>
       </div>
-      <AccordionsList />
+
+      <AccordionFilters />
     </div>
   );
 }
