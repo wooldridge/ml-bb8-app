@@ -3,16 +3,16 @@ import CriticalPartsGraph from '../../images/critical.svg';
 
 function CriticalParts() {
   return (
-    <div class='col-lg-8 col-md-12 g-1'>
-      <div class='card card-dashboard'>
+    <div className='col-lg-8 col-md-12 g-1'>
+      <div className='card card-dashboard'>
         <img src={Resize} alt='' width='16px' />
-        <div class='card-body pt-1 ms-3'>
-          <div class='row justify-content-start align-items-center'>
-            <div class='card-title col-auto mb-0'>
+        <div className='card-body pt-1 ms-3'>
+          <div className='row justify-content-start align-items-center'>
+            <div className='card-title col-auto mb-0'>
               Critical parts production schedule
             </div>
             <select
-              class='form-select form-select-sm me-1 width-auto'
+              className='form-select form-select-sm me-1 width-auto'
               aria-label='.form-select-md example'
             >
               <option selected>Time period</option>
@@ -21,7 +21,7 @@ function CriticalParts() {
               <option value='3'>Three</option>
             </select>
             <select
-              class='form-select form-select-sm me-1 width-auto'
+              className='form-select form-select-sm me-1 width-auto'
               aria-label='.form-select-md example'
             >
               <option selected>Region</option>
@@ -32,7 +32,7 @@ function CriticalParts() {
           </div>
 
           <img
-            class='img-fluid pt-4 pb-2 width-auto'
+            className='img-fluid pt-4 pb-2 width-auto'
             src={CriticalPartsGraph}
             alt=''
           />

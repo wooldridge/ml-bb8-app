@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Alert from '../Alert/Alert';
 import MilitaryBase from '../MilitaryBase/MilitaryBase';
 import Navbar from '../Navbar/Navbar';
@@ -14,8 +16,14 @@ import convoyToDisplay from '../../data/convoy-1.json';
 import DateOfBirth from '../DateOfBirth/DateOfBirth';
 import Photo from '../Photo/Photo';
 import CareerHistory from '../CareerHistory/CareerHistory';
+import DirectSubordinates from '../DirectSubordinates/DirectSubordinates';
 
 function Map() {
+  const [selectedFilters, setSelectedFilters] = useState([]);
+  const handleAccordionClick = (event) => {
+    console.log('handleAccordionClick', event);
+    setSelectedFilters([...selectedFilters, event.target.id]);
+  };
   return (
     <div>
       {/* <Alert /> */}
@@ -46,12 +54,17 @@ function Map() {
           {/* <Position />
           <DateOfBirth /> */}
           {/* <Photo /> */}
-          <CareerHistory />
+          {/* <CareerHistory /> */}
+          <DirectSubordinates />
           {/* <Requests /> */}
         </div>
       </div>
 
-      <AccordionFilters />
+      <AccordionFilters
+        title='Node levels'
+        labels={['Level 1', 'Level 2']}
+        handleClick={handleAccordionClick}
+      />
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.card-body-inner {
+  color: grey;
+  border-radius: 2px;
+}
+
+.card-body-inner.checked {
+  background-color: #35383a;
+  color: white;
+}
+
+.form-check-input {
+  border-color: grey !important;
+}
+
+.form-check-input:checked {
+  filter: invert();
+  background-color: #d2011e;
+  border-color: #d2011e !important;
+}
+
+.form-check-input:focus {
+  box-shadow: none;
+}

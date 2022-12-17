@@ -14,7 +14,7 @@ function Convoy(props) {
     }
     return props.convoy.convoyHistory.map((hist, index) => {
       return (
-        <tr>
+        <tr key={index}>
           <td className='text-dark' scope='row'>
             {hist.date}
           </td>

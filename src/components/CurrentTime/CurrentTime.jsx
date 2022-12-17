@@ -29,10 +29,10 @@ function CurrentTime() {
 
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   return (
-    <footer class='footer mt-auto py-3 bg-black'>
-      <span class='text-white ps-3'>Current Time</span>
-      <span class='text-white ps-3'>{date}</span>
-      <span class='text-white ps-3'>
+    <footer className='footer mt-auto py-3 bg-black'>
+      <span className='text-white ps-3'>Current Time</span>
+      <span className='text-white ps-3'>{date}</span>
+      <span className='text-white ps-3'>
         {timeZone} {time}
       </span>
     </footer>
