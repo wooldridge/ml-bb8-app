@@ -3,8 +3,9 @@ import Statistics from '../../images/statistics.svg';
 import Megaphone from '../../images/megaphone.svg';
 import Warning from '../../images/warning.svg';
 import Flag from '../../images/flag.svg';
+import './Sidebar.css';
 
-function Sidebar() {
+function Sidebar(props) {
   return (
     <div style={{ width: '100%' }}>
       <div
@@ -21,27 +22,30 @@ function Sidebar() {
           <li>
             <a
               href='#'
-              className='d-block py-3 text-white text-decoration-none'
+              className='li-requests d-block py-3 text-white text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
+              onClick={props.handleRequestsClick}
             >
               <div className='badge-container'>
                 <img
                   src={FileDownload}
-                  className='p-2'
+                  className='icon-requests p-2'
                   style={{ width: '35px' }}
                   alt=''
                 />
                 <div className='icon-badge-sidebar'>23</div>
               </div>
-              <div className='sidebar-label text-center'>Requests</div>
+              <div className='sidebar-label label-requests text-center'>
+                Requests
+              </div>
             </a>
           </li>
           <li>
             <a
               href='#'
-              className='d-block py-3 text-white text-decoration-none'
+              className='li-reports d-block py-3 text-white text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
@@ -49,13 +53,15 @@ function Sidebar() {
               <div className='badge-container'>
                 <img
                   src={Statistics}
-                  className='p-2'
+                  className='icon-reports p-2'
                   style={{ width: '35px' }}
                   alt=''
                 />
                 <div className='icon-badge-sidebar'>23</div>
               </div>
-              <div className='sidebar-label text-center'>Reports</div>
+              <div className='sidebar-label label-reports text-center'>
+                Reports
+              </div>
             </a>
           </li>
           <li>

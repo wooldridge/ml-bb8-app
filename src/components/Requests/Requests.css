@@ -1,0 +1,37 @@
+.requests-close {
+  background: #27292f;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 0.8rem;
+}
+
+.requests-close:hover {
+  cursor: pointer;
+}
+
+.requests-title {
+  font-size: 18px;
+}
+
+.card-requests {
+  background: #00040f;
+  border-radius: 0 !important;
+  position: absolute;
+  right: -16px;
+  border-top: solid 1px #272a33;
+}
+
+.tag-requests {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 3px 6px 4px;
+  margin: 3px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.tag-requests:hover {
+  border: 1px solid #2dfee1;
+  color: #2dfee1;
+  cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.li-requests:hover .icon-requests,
+.li-reports:hover .icon-reports {
+  filter: brightness(2000%);
+}
+
+.li-requests:hover .label-requests,
+.li-reports:hover .label-reports {
+  color: white;
+}

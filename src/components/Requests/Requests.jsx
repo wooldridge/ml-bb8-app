@@ -1,11 +1,17 @@
 import { Cross, ArrowRight } from 'akar-icons';
+import './Requests.css';
 
-function Requests() {
+function Requests(props) {
   return (
     <div className='card-requests card col-4 me-3'>
       <div className='card-body'>
         <div className='pb-3'>
-          <Cross className='requests-close' strokeWidth={2} size={23} />
+          <Cross
+            className='requests-close'
+            strokeWidth={2}
+            size={23}
+            onClick={props.handleRequestsClick}
+          />
           <span className='requests-title mx-3'>Requests</span>
           <select
             className='form-select form-select-sm width-auto d-inline'

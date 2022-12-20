@@ -66,5 +66,47 @@
       "lastName": "Bilous",
       "image": "subordinate-5.jpg"
     }
+  ],
+  "dataSource": {
+    "id": "DB3728",
+    "localization": "Frankfurt, DE",
+    "lastSync": "17:39"
+  },
+  "editHistory": [
+    {
+      "date": "21.05.2022",
+      "time": "05:10",
+      "status": "Updated Direct Subordinates by Andrew Shultz"
+    },
+    {
+      "date": "20.05.2022",
+      "time": "06:20",
+      "status": "Updated Assignment by Michael Cane"
+    },
+    {
+      "date": "19.05.2022",
+      "time": "17:25",
+      "status": "Updated Date of Birth by Andrew Shultz"
+    },
+    {
+      "date": "16.04.2022",
+      "time": "06:30",
+      "status": "Updated Position, Prace of Birth, Current Location by Lee Hoi"
+    },
+    {
+      "date": "15.04.2022",
+      "time": "06:30",
+      "status": "Updated Skills by Andrew Shultz"
+    },
+    {
+      "date": "18.01.2021",
+      "time": "19:00",
+      "status": "Updated Position by Andrew Shultz"
+    },
+    {
+      "date": "17.12.2020",
+      "time": "15:41",
+      "status": "Record created by Michael Cane"
+    }
   ]
 }
