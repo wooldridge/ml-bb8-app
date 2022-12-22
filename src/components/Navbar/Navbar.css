@@ -1,3 +1,8 @@
 .search {
   color: rgba(255, 255, 255, 0.4) !important;
 }
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+}
