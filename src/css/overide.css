@@ -25,6 +25,11 @@ html {
   background-color: #106418 !important;
 }
 
+.disclaimer {
+  background-color: #00ff19 !important;
+  color: black !important;
+}
+
 body {
   background-color: #000;
 }

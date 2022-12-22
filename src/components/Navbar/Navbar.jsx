@@ -1,5 +1,6 @@
 import './Navbar.css';
 
+import { Link } from 'react-router-dom';
 import { Search, Plus, Cross } from 'akar-icons';
 import Logo from '../../images/ml.svg';
 import Dashboard from '../../images/dashboard.svg';
@@ -85,16 +86,16 @@ export default function Navbar() {
             </li>
 
             <li className='nav-item d-flex align-items-center active px-3'>
-              <a className='nav-link' href='#'>
-                <img className='p-2' src={Dashboard} />
-                Dashboard
-              </a>
+                <Link to='/dashboard'>
+                    <img className='p-2' src={Dashboard} />
+                    Dashboard
+                </Link>
             </li>
             <li className='nav-item d-flex align-items-center inactive px-3'>
-              <a className='nav-link' href='#'>
-                Ukraine Logistics Operations
-                <Cross className='m-2' strokeWidth={2} size={16} />
-              </a>
+                <Link to='/map'>
+                    Ukraine Logistics Operations
+                    <Cross className='m-2' strokeWidth={2} size={16} />
+                </Link>
             </li>
             <li className='nav-item d-flex align-items-center inactive px-3'>
               <a className='nav-link' href='#'>

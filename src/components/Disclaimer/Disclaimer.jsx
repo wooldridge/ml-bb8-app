@@ -10,7 +10,7 @@ function Disclaimer() {
         <main className='px-3 my-auto'>
           <div className='row justify-content-center'>
             <div className='col-sm-10 col-lg-8 col-xl-6'>
-              <div className='card bg-success rounded-5 my-5 animate__animated animate__fadeIn'>
+              <div className='card disclaimer rounded-5 my-5 animate__animated animate__fadeIn'>
                 <div className='card-body p-5'>
                   <p className='text-center'>
                     <TriangleAlertFill strokeWidth={2} size={180} />
