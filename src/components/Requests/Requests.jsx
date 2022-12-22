@@ -1,7 +1,85 @@
 import { Cross, ArrowRight } from 'akar-icons';
 import './Requests.css';
+import High from '../../images/warning-red.svg';
+import Medium from '../../images/warning-orange.svg';
+import Low from '../../images/warning-green.svg';
 
 function Requests(props) {
+  const getRequests = () => {
+    if (!props.requests.requests || props.requests.requests.length === 0) {
+      return <div className='no-data'>No requests available</div>;
+    }
+    return props.requests.requests.map((req, index) => {
+      return (
+        <div className='row justify-content-between' key={index}>
+          <div className='col-xl-7 col-lg-12 pb-3'>
+            <div>
+              <span className='fs-8'>
+                <a href='#' className='link-white'>
+                  {req.startPoint}
+                </a>
+              </span>
+              <ArrowRight
+                className='top-0 m-2 text-secondary'
+                strokeWidth={2}
+                size={12}
+              />
+              <span className='fs-8'>
+                <a href='#' className='link-white'>
+                  {req.endPoint}
+                </a>
+              </span>
+            </div>
+            <div>
+              <span className='fs-7'>
+                Resources delivery request
+                {req.from ? ' from ' : null}
+                <a href='#' className='link-white'>
+                  {req.from}
+                </a>
+              </span>
+            </div>
+            <div className='fs-8 text-secondary'>{req.fromId}</div>
+          </div>
+
+          <div className='row col-xl-5 col-lg-12 width-auto justify-content-between pb-3'>
+            <div className='width-auto'>
+              {req.priority && req.priority.toLowerCase() === 'high' ? (
+                <div className='badge-high high-priority m-0'>
+                  <img src={High} alt='' width='10px' className='me-1' />
+                  High
+                </div>
+              ) : null}
+              {req.priority && req.priority.toLowerCase() === 'medium' ? (
+                <div className='badge-medium medium-priority m-0'>
+                  <img src={Medium} alt='' width='10px' className='me-1' />
+                  Medium
+                </div>
+              ) : null}
+              {req.priority && req.priority.toLowerCase() === 'low' ? (
+                <div className='badge-low low-priority m-0'>
+                  <img src={Low} alt='' width='10px' className='me-1' />
+                  Low
+                </div>
+              ) : null}
+              <div className='fs-8 text-secondary text-end pt-2'>
+                {req.time}
+              </div>
+            </div>
+
+            <span className='width-auto'>
+              <ArrowRight
+                className='arrow-requests m-2 text-secondary'
+                strokeWidth={2}
+                size={20}
+                onClick={props.handleRequestClick}
+              />
+            </span>
+          </div>
+        </div>
+      );
+    });
+  };
   return (
     <div className='card-requests card col-4 me-3'>
       <div className='card-body'>
@@ -49,90 +127,7 @@ function Requests(props) {
 
         <div className='text-secondary fs-8'>Today - 10.4.2022</div>
 
-        <div className='row justify-content-between'>
-          <div className='col-xl-7 col-lg-12 pb-3'>
-            <div>
-              <span className='fs-8'>
-                <a href='#' className='link-white'>
-                  Commander Ivan Kommarenko
-                </a>
-              </span>
-              <ArrowRight
-                className='top-0 m-2 text-secondary'
-                strokeWidth={2}
-                size={12}
-              />
-              <span className='fs-8'>
-                <a href='#' className='link-white'>
-                  MarkLogic
-                </a>
-              </span>
-            </div>
-            <div>
-              <span className='fs-7'>
-                Resources delivery request from&nbsp;
-                <a href='#' className='link-white'>
-                  Zhytomyr Military Base
-                </a>
-              </span>
-            </div>
-            <div className='fs-8 text-secondary'>ZMR001003</div>
-          </div>
-
-          <div className='row col-xl-5 col-lg-12 width-auto justify-content-between pb-3'>
-            <div className='width-auto'>
-              <div className='badge-high high-priority m-0'>
-                <img src='images/warning-red.svg' alt='' width='10px' />
-                High
-              </div>
-              <div className='fs-8 text-secondary text-end pt-2'>16:10:36</div>
-            </div>
-
-            <span className='width-auto'>
-              <ArrowRight
-                className='top-0 m-2 text-secondary'
-                strokeWidth={2}
-                size={20}
-              />
-            </span>
-          </div>
-        </div>
-
-        <div className='row justify-content-between'>
-          <div className='col-xl-7 col-lg-12 pb-3'>
-            <div>
-              <span className='fs-8'>ZMR001003</span>
-              <i className='ai-arrow-right top-0 p-1 fs-8 text-secondary'></i>
-              <span className='fs-8'>
-                <a href='#' className='link-white'>
-                  MarkLogic
-                </a>
-              </span>
-            </div>
-            <div>
-              <span className='fs-7'>Resources delivery request</span>
-            </div>
-            <div className='fs-8 text-secondary'>ZMR001003</div>
-          </div>
-
-          <div className='row col-xl-5 col-lg-12 width-auto pb-3'>
-            <div className='width-auto'>
-              <div className='badge-high high-priority m-0'>
-                <img src='images/warning-red.svg' alt='' width='10px' />
-                High
-              </div>
-              <div className='fs-8 text-secondary text-end pt-2'>16:10:36</div>
-            </div>
-
-            <div className='width-auto'>
-              <ArrowRight
-                className='top-0 m-2 text-secondary'
-                strokeWidth={2}
-                size={20}
-              />
-            </div>
-          </div>
-        </div>
+        {getRequests()}
       </div>
     </div>
   );

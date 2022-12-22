@@ -21,3 +21,8 @@
 .form-check-input:focus {
   box-shadow: none;
 }
+
+.form-check-label {
+  width: 100%;
+  height: 32px;
+}

@@ -7,6 +7,7 @@
 
 .requests-close:hover {
   cursor: pointer;
+  background: hsl(225, 9%, 30%);
 }
 
 .requests-title {
@@ -34,4 +35,9 @@
   border: 1px solid #2dfee1;
   color: #2dfee1;
   cursor: pointer;
+}
+
+.arrow-requests:hover {
+  cursor: pointer;
+  color: white !important;
 }

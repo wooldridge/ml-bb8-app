@@ -67,7 +67,7 @@ function Sidebar(props) {
           <li>
             <a
               href='#'
-              className='d-block py-3 text-white text-decoration-none'
+              className='li-notifications d-block py-3 text-white text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
@@ -75,19 +75,21 @@ function Sidebar(props) {
               <div className='badge-container'>
                 <img
                   src={Megaphone}
-                  className='p-2'
+                  className='icon-notifications p-2'
                   style={{ width: '35px' }}
                   alt=''
                 />
                 <div className='icon-badge-sidebar'>23</div>
               </div>
-              <div className='sidebar-label text-center'>Notifications</div>
+              <div className='sidebar-label label-notifications text-center'>
+                Notifications
+              </div>
             </a>
           </li>
           <li>
             <a
               href='#'
-              className='d-block py-3 text-white text-decoration-none'
+              className='li-incidents d-block py-3 text-white text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
@@ -95,19 +97,21 @@ function Sidebar(props) {
               <div className='badge-container'>
                 <img
                   src={Warning}
-                  className='p-2'
+                  className='icon-incidents p-2'
                   style={{ width: '35px' }}
                   alt=''
                 />
                 <div className='icon-badge-sidebar'>23</div>
               </div>
-              <div className='sidebar-label text-center'>Incidents</div>
+              <div className='sidebar-label label-incidents text-center'>
+                Incidents
+              </div>
             </a>
           </li>
           <li>
             <a
               href='#'
-              className='d-block py-3 text-white text-decoration-none'
+              className='li-alerts d-block py-3 text-white text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
@@ -115,13 +119,15 @@ function Sidebar(props) {
               <div className='badge-container'>
                 <img
                   src={Flag}
-                  className='p-2'
+                  className='icon-alerts p-2'
                   style={{ width: '35px' }}
                   alt=''
                 />
                 <div className='icon-badge-sidebar'>23</div>
               </div>
-              <div className='sidebar-label text-center'>Alerts</div>
+              <div className='sidebar-label label-alerts text-center'>
+                Alerts
+              </div>
             </a>
           </li>
         </ul>

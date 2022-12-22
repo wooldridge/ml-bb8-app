@@ -64,16 +64,23 @@ body {
 .navbar .form-control,
 .navbar .form-control:focus {
   background-color: transparent;
-  border: none;
+  border: solid 1px #272727;
   box-shadow: none;
   color: #fff;
+  padding-left: 35px;
 }
 
-.nav-searchbar {
+.navbar .search {
+  position: absolute;
+  margin-left: 10px;
+  padding: 1px;
+}
+
+/* .nav-searchbar {
   padding-left: 25px;
   border-left: solid 1px #272727;
   border-right: solid 1px #272727;
-}
+} */
 
 .icon-badge,
 .icon-badge-sidebar {
@@ -99,11 +106,6 @@ body {
   color: #000;
   border-radius: 0;
   border: none;
-}
-
-.sidebar-label {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.4);
 }
 
 .badge-container {
@@ -551,7 +553,7 @@ table tbody tr td {
   letter-spacing: 0.05em;
   font-size: 12px;
   font-weight: 700;
-  padding: 3px 12px 3px 12px;
+  padding: 4px 6px;
   margin: 10px 0 10px 0;
   max-width: 150px;
   display: inline-block;

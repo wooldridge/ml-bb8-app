@@ -1,0 +1,7 @@
+.border-right {
+  border-right: solid 1px #464c55;
+}
+
+.request-close {
+  cursor: pointer;
+}
