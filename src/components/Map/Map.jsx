@@ -25,6 +25,8 @@ function Map() {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [showRequests, setShowRequests] = useState(false);
   const [showRequest, setShowRequest] = useState(false);
+  const [showMilitaryBase, setShowMilitaryBase] = useState(false);
+
   const handleAccordionClick = (event) => {
     console.log('handleAccordionClick', event);
     setSelectedFilters([...selectedFilters, event.target.id]);
@@ -36,12 +38,21 @@ function Map() {
   const handleRequestClick = (event) => {
     console.log('handleRequestClick', event);
     setShowRequest(true);
-    setShowRequests(false);
+    // setShowRequests(false);
   };
   const handleDelivReqClick = (event) => {
     console.log('handleDelivReqClick', event);
     setShowRequest(false);
   };
+  const handleMilitaryBaseOpen = (event) => {
+    console.log('handleMilitaryBaseOpen', event);
+    setShowMilitaryBase(true);
+  };
+  const handleMilitaryBaseClose = (event) => {
+    console.log('handleMilitaryBaseClose', event);
+    setShowMilitaryBase(false);
+  };
+
   return (
     <div>
       {/* <Alert /> */}
@@ -49,7 +60,12 @@ function Map() {
       <Sidebar handleRequestsClick={handleRequestsClick} />
       <div className='outer-container'>
         <div className='inner-container'>
-          {/* <MilitaryBase militaryBase={militaryBaseToDisplay} /> */}
+          {showMilitaryBase ? (
+            <MilitaryBase
+              militaryBase={militaryBaseToDisplay}
+              handleMilitaryBaseClose={handleMilitaryBaseClose}
+            />
+          ) : null}
           {/* <Convoy convoy={convoyToDisplay} /> */}
           {showRequest ? (
             <DeliveryRequest handleDelivReqClick={handleDelivReqClick} />
@@ -67,6 +83,8 @@ function Map() {
               requests={requestsToDisplay}
               handleRequestsClick={handleRequestsClick}
               handleRequestClick={handleRequestClick}
+              handleMilitaryBaseOpen={handleMilitaryBaseOpen}
+              handleMilitaryBaseClose={handleMilitaryBaseClose}
             />
           ) : null}
         </div>

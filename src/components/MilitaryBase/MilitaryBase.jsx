@@ -48,6 +48,30 @@ function MilitaryBase(props) {
       );
     });
   };
+
+  const getOperatingUnits = () => {
+    if (
+      !props.militaryBase.operatingUnits ||
+      props.militaryBase.operatingUnits.length === 0
+    ) {
+      return <div className='no-data'>No Operating Units available</div>;
+    }
+    return props.militaryBase.operatingUnits.map((units, index) => {
+      return (
+        <div className='mt-1' key={index}>
+          <div className='info-card d-flex card-body align-items-center'>
+            <img className='img-fluid emblem' src={Emblem} alt='' width='75%' />
+            <div className='ps-3'>
+              <div className='form-label mb-0'>{units.type}</div>
+              <div>{units.formation}</div>
+            </div>
+            <ArrowRight className='ms-auto me-3' strokeWidth={2} size={16} />
+          </div>
+        </div>
+      );
+    });
+  };
+
   const militaryBase = props.militaryBase;
 
   function handleTabClick(event) {
@@ -89,7 +113,12 @@ function MilitaryBase(props) {
           </nav>
           <div className='action-icons'>
             <Minus strokeWidth={2} size={16} />
-            <Cross className='ms-3' strokeWidth={2} size={16} />
+            <Cross
+              className='ms-3'
+              strokeWidth={2}
+              size={16}
+              onClick={props.handleMilitaryBaseClose}
+            />
           </div>
         </div>
 
@@ -340,59 +369,26 @@ function MilitaryBase(props) {
           </div>
           <div className='operating-units mt-3'>
             <div className='subheader'>Operating Units</div>
-            <div className='mt-3'>
-              <div className='info-card d-flex card-body align-items-center'>
-                <img
-                  className='img-fluid emblem'
-                  src={Emblem}
-                  alt=''
-                  width='75%'
-                />
-                <div className='ps-3'>
-                  <div className='form-label mb-0'>Unit Emblem</div>
-                  <div>80th Air Assault Brigade</div>
-                </div>
-                <ArrowRight
-                  className='ms-auto me-3'
-                  strokeWidth={2}
-                  size={16}
-                />
-              </div>
-            </div>
-            <div className='mt-1'>
-              <div className='info-card d-flex card-body align-items-center'>
-                <img
-                  className='img-fluid emblem'
-                  src={Emblem}
-                  alt=''
-                  width='75%'
-                />
-                <div className='ps-3'>
-                  <div className='form-label mb-0'>Unit Emblem</div>
-                  <div>81st Airmobile Brigade</div>
-                </div>
-                <ArrowRight
-                  className='ms-auto me-3'
-                  strokeWidth={2}
-                  size={16}
-                />
-              </div>
-            </div>
+            <div className='mt-3'>{getOperatingUnits()}</div>
           </div>
           <div className='operating-units mt-3'>
             <div className='subheader'>Commander</div>
             <div className='mt-3'>
-              <div className='info-card d-flex card-body align-items-center'>
-                <img className='img-fluid emblem me-3' src={Sodol} alt='' />
-                <div className='ps-3'>
-                  <div className='form-label mb-0'>Present Commander</div>
-                  <div>Colonel Yuriy Sodol</div>
+              <div className='mt-1'>
+                <div className='info-card d-flex card-body align-items-center'>
+                  <img className='img-fluid emblem me-3' src={Sodol} alt='' />
+                  <div className='ps-3'>
+                    <div className='form-label mb-0'>
+                      {props.militaryBase.commanderPosition}
+                    </div>
+                    <div>{props.militaryBase.commanderName}</div>
+                  </div>
+                  <ArrowRight
+                    className='ms-auto me-3'
+                    strokeWidth={2}
+                    size={16}
+                  />
                 </div>
-                <ArrowRight
-                  className='ms-auto me-3'
-                  strokeWidth={2}
-                  size={16}
-                />
               </div>
             </div>
           </div>

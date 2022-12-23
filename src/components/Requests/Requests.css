@@ -15,11 +15,12 @@
 }
 
 .card-requests {
-  background: #00040f;
+  background: hsl(224, 100%, 3%, 0.9);
   border-radius: 0 !important;
   position: absolute;
   right: -16px;
   border-top: solid 1px #272a33;
+  backdrop-filter: blur(10px);
 }
 
 .tag-requests {
@@ -40,4 +41,8 @@
 .arrow-requests:hover {
   cursor: pointer;
   color: white !important;
+}
+
+.bottom-border {
+  border-bottom: solid 1px #1b2130;
 }

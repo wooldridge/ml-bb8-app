@@ -75,5 +75,17 @@
       "name": "Equipment",
       "resources": []
     }
-  ]
+  ],
+  "operatingUnits": [
+    {
+      "type": "Unit Emblem",
+      "formation": "80th Air Assault Brigade"
+    },
+    {
+      "type": "Unit Emblem",
+      "formation": "80th Air Assault Brigade"
+    }
+  ],
+  "commanderPosition": "Present Commander",
+  "commanderName": "Colonel Yuriy Sodol"
 }

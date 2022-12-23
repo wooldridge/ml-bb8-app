@@ -11,7 +11,10 @@ function Requests(props) {
     }
     return props.requests.requests.map((req, index) => {
       return (
-        <div className='row justify-content-between' key={index}>
+        <div
+          className='row justify-content-between bottom-border g-0 mb-3'
+          key={index}
+        >
           <div className='col-xl-7 col-lg-12 pb-3'>
             <div>
               <span className='fs-8'>
@@ -34,7 +37,11 @@ function Requests(props) {
               <span className='fs-7'>
                 Resources delivery request
                 {req.from ? ' from ' : null}
-                <a href='#' className='link-white'>
+                <a
+                  href='#'
+                  className='link-white'
+                  onClick={props.handleMilitaryBaseOpen}
+                >
                   {req.from}
                 </a>
               </span>
