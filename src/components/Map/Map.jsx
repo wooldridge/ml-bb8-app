@@ -26,6 +26,8 @@ function Map() {
   const [showRequests, setShowRequests] = useState(false);
   const [showRequest, setShowRequest] = useState(false);
   const [showMilitaryBase, setShowMilitaryBase] = useState(false);
+  const [showNewTicket, setShowNewTicket] = useState(false);
+  const [showPerson, setShowPerson] = useState(false);
 
   const handleAccordionClick = (event) => {
     console.log('handleAccordionClick', event);
@@ -35,13 +37,13 @@ function Map() {
     console.log('handleRequestsClick', event);
     setShowRequests(!showRequests);
   };
-  const handleRequestClick = (event) => {
-    console.log('handleRequestClick', event);
+  const handleRequestOpen = (event) => {
+    console.log('handleRequestOpen', event);
     setShowRequest(true);
     // setShowRequests(false);
   };
-  const handleDelivReqClick = (event) => {
-    console.log('handleDelivReqClick', event);
+  const handleDelivReqClose = (event) => {
+    console.log('handleDelivReqClose', event);
     setShowRequest(false);
   };
   const handleMilitaryBaseOpen = (event) => {
@@ -51,6 +53,14 @@ function Map() {
   const handleMilitaryBaseClose = (event) => {
     console.log('handleMilitaryBaseClose', event);
     setShowMilitaryBase(false);
+  };
+  const handlePersonOpen = (event) => {
+    console.log('handlePersonOpen', event);
+    setShowPerson(true);
+  };
+  const handlePersonClose = (event) => {
+    console.log('handlePersonClose', event);
+    setShowPerson(false);
   };
 
   return (
@@ -64,15 +74,24 @@ function Map() {
             <MilitaryBase
               militaryBase={militaryBaseToDisplay}
               handleMilitaryBaseClose={handleMilitaryBaseClose}
+              handlePersonOpen={handlePersonOpen}
             />
           ) : null}
           {/* <Convoy convoy={convoyToDisplay} /> */}
           {showRequest ? (
-            <DeliveryRequest handleDelivReqClick={handleDelivReqClick} />
+            <DeliveryRequest 
+              handleDelivReqClose={handleDelivReqClose} 
+              handleMilitaryBaseOpen={handleMilitaryBaseOpen}
+            />
           ) : null}
 
           {/* <NewTicket /> */}
-          {/* <PersonDetails person={personToDisplay} /> */}
+          {showPerson ? (
+            <PersonDetails 
+              person={personToDisplay} 
+              handlePersonClose={handlePersonClose}
+            />
+          ) : null}
           {/* <Position details={personToDisplay} /> */}
           {/* <DateOfBirth details={personToDisplay} /> */}
           {/* <Photo details={personToDisplay} /> */}
@@ -82,7 +101,7 @@ function Map() {
             <Requests
               requests={requestsToDisplay}
               handleRequestsClick={handleRequestsClick}
-              handleRequestClick={handleRequestClick}
+              handleRequestOpen={handleRequestOpen}
               handleMilitaryBaseOpen={handleMilitaryBaseOpen}
               handleMilitaryBaseClose={handleMilitaryBaseClose}
             />

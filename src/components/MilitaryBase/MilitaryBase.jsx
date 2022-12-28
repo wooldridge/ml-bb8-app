@@ -114,7 +114,7 @@ function MilitaryBase(props) {
           <div className='action-icons'>
             <Minus strokeWidth={2} size={16} />
             <Cross
-              className='ms-3'
+              className='panel-close ms-3'
               strokeWidth={2}
               size={16}
               onClick={props.handleMilitaryBaseClose}
@@ -381,7 +381,15 @@ function MilitaryBase(props) {
                     <div className='form-label mb-0'>
                       {props.militaryBase.commanderPosition}
                     </div>
-                    <div>{props.militaryBase.commanderName}</div>
+                    <div>
+                      <a 
+                        className='link-white' 
+                        href='#'
+                        onClick={props.handlePersonOpen}
+                      >
+                        {props.militaryBase.commanderName}
+                      </a>
+                    </div>
                   </div>
                   <ArrowRight
                     className='ms-auto me-3'
