@@ -79,7 +79,7 @@ function Requests(props) {
                 className='arrow-requests m-2 text-secondary'
                 strokeWidth={2}
                 size={20}
-                onClick={props.handleRequestClick}
+                onClick={props.handleRequestOpen}
               />
             </span>
           </div>

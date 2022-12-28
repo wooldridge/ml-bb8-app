@@ -89,7 +89,12 @@ function PersonDetails(props) {
             <span className='me-2 edit-mode-text'>Edit mode</span>
           </div>
           <div className='action-icons'>
-            <Cross className='ms-3' strokeWidth={2} size={16} />
+            <Cross 
+              className='panel-close ms-3' 
+              strokeWidth={2} 
+              size={16} 
+              onClick={props.handlePersonClose}
+            />
           </div>
         </div>
 

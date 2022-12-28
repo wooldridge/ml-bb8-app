@@ -27,7 +27,7 @@ function DeliveryRequest(props) {
               className='request-close ms-3'
               strokeWidth={2}
               size={16}
-              onClick={props.handleDelivReqClick}
+              onClick={props.handleDelivReqClose}
             />
           </div>
         </div>
@@ -64,7 +64,11 @@ function DeliveryRequest(props) {
               Javelin
             </a>{' '}
             from{' '}
-            <a className='link-white' href='#'>
+            <a 
+              className='link-white' 
+              href='#'
+              onClick={props.handleMilitaryBaseOpen}
+            >
               Zhytomyr Military Base
             </a>
           </div>
