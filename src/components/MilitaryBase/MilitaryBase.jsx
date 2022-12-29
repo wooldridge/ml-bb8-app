@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import PanelContext from '../../store/PanelContext';
 import Volyn from '../../images/volyn.jpg';
 import Emblem from '../../images/emblem.png';
 import Sodol from '../../images/sodol.png';
@@ -6,6 +8,9 @@ import Accordion from 'react-bootstrap/Accordion';
 import './MilitaryBase.css';
 
 function MilitaryBase(props) {
+
+  const panelContext = useContext(PanelContext);
+
   const getResources = (resources, eventKey, level) => {
     return resources.map((res, index) => {
       return res.resources !== undefined ? (
@@ -27,23 +32,23 @@ function MilitaryBase(props) {
           </Accordion.Body>
         </Accordion.Item>
       ) : (
-        <div class='innermost d-flex justify-content-between align-items-center px-5 py-3'>
+        <div className='innermost d-flex justify-content-between align-items-center px-5 py-3'>
           <div>
             <ArrowRight className='me-3' strokeWidth={2} size={16} />
             {res.name}
-            <div class='mt-2'>
-              <span class='accordion-badge px-2 py-1 me-1'>
+            <div className='mt-2'>
+              <span className='accordion-badge px-2 py-1 me-1'>
                 <a href=''>Status</a>
               </span>
-              <span class='accordion-badge px-2 py-1 me-1'>
+              <span className='accordion-badge px-2 py-1 me-1'>
                 <a href=''>Request Transfer</a>
               </span>
-              <span class='accordion-badge px-2 py-1 me-1'>
+              <span className='accordion-badge px-2 py-1 me-1'>
                 <a href=''>Block</a>
               </span>
             </div>
           </div>
-          <span class='fs-2'>{res.number}</span>
+          <span className='fs-2'>{res.number}</span>
         </div>
       );
     });
@@ -72,9 +77,9 @@ function MilitaryBase(props) {
     });
   };
 
-  const militaryBase = props.militaryBase;
+  const militaryBase = props.data;
 
-  function handleTabClick(event) {
+  const handleTabClick = (event) => {
     // Handle tabs
     const allTabs = Array.from(document.getElementsByClassName('nav-link'));
     allTabs.forEach((tab) => {
@@ -117,7 +122,9 @@ function MilitaryBase(props) {
               className='panel-close ms-3'
               strokeWidth={2}
               size={16}
-              onClick={props.handleMilitaryBaseClose}
+              onClick={() => panelContext.removePanel(
+                {type: "location", id: props.id}
+              )}
             />
           </div>
         </div>
@@ -214,7 +221,7 @@ function MilitaryBase(props) {
                       Antitank rockets
                     </Accordion.Header>
                     <Accordion.Body>
-                      <div class='innermost d-flex justify-content-between align-items-center px-5 py-3'>
+                      <div className='innermost d-flex justify-content-between align-items-center px-5 py-3'>
                         <div>
                           <ArrowRight
                             className='me-3'
@@ -222,21 +229,21 @@ function MilitaryBase(props) {
                             size={16}
                           />
                           Javelin missiles
-                          <div class='mt-2'>
-                            <span class='accordion-badge px-2 py-1 me-1'>
+                          <div className='mt-2'>
+                            <span className='accordion-badge px-2 py-1 me-1'>
                               <a href=''>Status</a>
                             </span>
-                            <span class='accordion-badge px-2 py-1 me-1'>
+                            <span className='accordion-badge px-2 py-1 me-1'>
                               <a href=''>Request Transfer</a>
                             </span>
-                            <span class='accordion-badge px-2 py-1 me-1'>
+                            <span className='accordion-badge px-2 py-1 me-1'>
                               <a href=''>Block</a>
                             </span>
                           </div>
                         </div>
-                        <span class='fs-2'>600</span>
+                        <span className='fs-2'>600</span>
                       </div>
-                      <div class='innermost d-flex justify-content-between align-items-center px-5 py-3'>
+                      <div className='innermost d-flex justify-content-between align-items-center px-5 py-3'>
                         <div>
                           <ArrowRight
                             className='me-3'
@@ -244,21 +251,21 @@ function MilitaryBase(props) {
                             size={16}
                           />
                           NLAW missiles
-                          <div class='mt-2'>
-                            <span class='accordion-badge px-2 py-1 me-1'>
+                          <div className='mt-2'>
+                            <span className='accordion-badge px-2 py-1 me-1'>
                               <a href=''>Status</a>
                             </span>
-                            <span class='accordion-badge px-2 py-1 me-1'>
+                            <span className='accordion-badge px-2 py-1 me-1'>
                               <a href=''>Request Transfer</a>
                             </span>
-                            <span class='accordion-badge px-2 py-1 me-1'>
+                            <span className='accordion-badge px-2 py-1 me-1'>
                               <a href=''>Block</a>
                             </span>
                           </div>
                         </div>
-                        <span class='fs-2'>600</span>
+                        <span className='fs-2'>600</span>
                       </div>
-                      <div class='innermost d-flex justify-content-between align-items-center px-5 py-3'>
+                      <div className='innermost d-flex justify-content-between align-items-center px-5 py-3'>
                         <div>
                           <ArrowRight
                             className='me-3'
@@ -266,19 +273,19 @@ function MilitaryBase(props) {
                             size={16}
                           />
                           RPG missiles
-                          <div class='mt-2'>
-                            <span class='accordion-badge px-2 py-1 me-1'>
+                          <div className='mt-2'>
+                            <span className='accordion-badge px-2 py-1 me-1'>
                               <a href=''>Status</a>
                             </span>
-                            <span class='accordion-badge px-2 py-1 me-1'>
+                            <span className='accordion-badge px-2 py-1 me-1'>
                               <a href=''>Request Transfer</a>
                             </span>
-                            <span class='accordion-badge px-2 py-1 me-1'>
+                            <span className='accordion-badge px-2 py-1 me-1'>
                               <a href=''>Block</a>
                             </span>
                           </div>
                         </div>
-                        <span class='fs-2'>600</span>
+                        <span className='fs-2'>600</span>
                       </div>
                     </Accordion.Body>
                   </Accordion.Item>
@@ -385,7 +392,9 @@ function MilitaryBase(props) {
                       <a 
                         className='link-white' 
                         href='#'
-                        onClick={props.handlePersonOpen}
+                        onClick={() => panelContext.addPanel(
+                          {type: "person", id: 'person-1001'}
+                        )}
                       >
                         {props.militaryBase.commanderName}
                       </a>

@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import PanelContext from '../../store/PanelContext';
 import { Cross, ChevronLeft, ArrowRight } from 'akar-icons';
 import Switch from '../../images/Switch.svg';
 import ViewMore from '../../images/view-more.svg';
@@ -7,18 +9,17 @@ import Subordinate from '../Subordinate/Subordinate';
 const imageFolder = '/images/';
 
 function PersonDetails(props) {
-  const person = props.person;
-  console.log('Person that got passed in', person);
-  console.log('foo', props.foo);
+
+  const panelContext = useContext(PanelContext);
 
   const getCareerHistory = () => {
     if (
-      !props.person.careerHistory ||
-      props.person.careerHistory.length === 0
+      !props.data.careerHistory ||
+      props.data.careerHistory.length === 0
     ) {
       return <div className='no-data'>No Career History available</div>;
     }
-    return props.person.careerHistory.map((hist, index) => {
+    return props.data.careerHistory.map((hist, index) => {
       return (
         <div className='career-history-item mt-2 col-4' key={index}>
           <div className='career-history-title'>
@@ -42,12 +43,12 @@ function PersonDetails(props) {
 
   const getDirectSubordinates = () => {
     if (
-      !props.person.directSubordinates ||
-      props.person.directSubordinates.length === 0
+      !props.data.directSubordinates ||
+      props.data.directSubordinates.length === 0
     ) {
       return <div className='no-data'>No Direct Subordinates available</div>;
     }
-    return props.person.directSubordinates.map((sub, index) => {
+    return props.data.directSubordinates.map((sub, index) => {
       return (
         <div
           className='info-card d-flex card-body align-items-center mt-1'
@@ -69,6 +70,26 @@ function PersonDetails(props) {
       );
     });
   };
+
+  const handleTabClick = (event) => {
+    // Handle tabs
+    const allTabs = Array.from(document.getElementsByClassName('nav-link'));
+    allTabs.forEach((tab) => {
+      tab.classList.remove('active');
+    });
+    const clickedTab = document.getElementById(event.target.id);
+    clickedTab.classList.add('active');
+
+    // Handle tab content
+    const allContent = Array.from(
+      document.getElementsByClassName('tab-content')
+    );
+    allContent.forEach((section) => {
+      section.classList.remove('selected');
+    });
+    const contentToShow = document.getElementById(event.target.id + '-content');
+    contentToShow.classList.add('selected');
+  }
 
   return (
     <div className='card-commander card col-4 me-3'>
@@ -93,7 +114,9 @@ function PersonDetails(props) {
               className='panel-close ms-3' 
               strokeWidth={2} 
               size={16} 
-              onClick={props.handlePersonClose}
+              onClick={() => panelContext.removePanel(
+                {type: "person", id: props.id}
+              )}
             />
           </div>
         </div>
@@ -103,8 +126,8 @@ function PersonDetails(props) {
             <div className='row details-item p-1 g-1'>
               <div className='subheader-teal'>Rank + Name</div>
               <div className='fs-4'>
-                {props.person.rank} {props.person.firstName}{' '}
-                {person.lastName.toUpperCase()}
+                {props.data.rank} {props.data.firstName}{' '}
+                {props.data.lastName.toUpperCase()}
               </div>
             </div>
 
@@ -119,7 +142,7 @@ function PersonDetails(props) {
                 <div className='details-text width-auto'>
                   <div className='subheader-teal'>Date of Birth</div>
                   <div className='details-body-text'>
-                    {getDateFormatted(props.person.dob)}
+                    {getDateFormatted(props.data.dob)}
                   </div>
                 </div>
                 <img src={ViewMore} alt='' className='view-more' />
@@ -133,7 +156,7 @@ function PersonDetails(props) {
               >
                 <div className='details-text width-auto'>
                   <div className='subheader-teal'>Place of Birth</div>
-                  <div className='details-body-text'>{props.person.pob}</div>
+                  <div className='details-body-text'>{props.data.pob}</div>
                 </div>
                 <img src={ViewMore} alt='' className='view-more' />
               </div>
@@ -150,7 +173,7 @@ function PersonDetails(props) {
                 <div className='details-text width-auto col-11'>
                   <div className='subheader-teal'>Current location</div>
                   <div className='details-body-text'>
-                    {props.person.currentLocation}
+                    {props.data.currentLocation}
                   </div>
                 </div>
                 <img src={ViewMore} alt='' className='view-more' />
@@ -165,7 +188,7 @@ function PersonDetails(props) {
                 <div className='details-text width-auto'>
                   <div className='subheader-teal'>Position</div>
                   <div className='details-body-text'>
-                    {props.person.position}
+                    {props.data.position}
                   </div>
                 </div>
                 <img src={ViewMore} alt='' className='view-more' />
@@ -182,7 +205,7 @@ function PersonDetails(props) {
               <div className='details-text width-auto'>
                 <div className='subheader-teal'>Assignment</div>
                 <div className='details-body-text'>
-                  {props.person.assignment}
+                  {props.data.assignment}
                 </div>
               </div>
               <img src={ViewMore} alt='' className='view-more' />
@@ -198,7 +221,7 @@ function PersonDetails(props) {
 
           <div className='col-xl-4 p-3 pe-1'>
             <div className='details-item d-block'>
-              <img src={imageFolder + props.person.image} alt='' />
+              <img src={imageFolder + props.data.image} alt='' />
               <div className='row justify-content-between p-2'>
                 <div className='subheader-teal width-auto'>Photo</div>
                 <img src={ViewMore} alt='' className='view-more' />
@@ -215,7 +238,7 @@ function PersonDetails(props) {
                 className='nav-link px-0 me-2 active'
                 aria-current='page'
                 href='#'
-                onclick='handleTabClick(event)'
+                onClick={handleTabClick}
               >
                 Military Career
               </a>
@@ -225,7 +248,7 @@ function PersonDetails(props) {
                 id='tab-units'
                 className='nav-link px-0 mx-2'
                 href='#'
-                onclick='handleTabClick(event)'
+                onClick={handleTabClick}
               >
                 Education
               </a>
@@ -235,7 +258,7 @@ function PersonDetails(props) {
                 id='tab-media'
                 className='nav-link px-0 mx-2'
                 href='#'
-                onclick='handleTabClick(event)'
+                onClick={handleTabClick}
               >
                 Reports
               </a>
@@ -245,7 +268,7 @@ function PersonDetails(props) {
                 id='tab-staff'
                 className='nav-link px-0 mx-2'
                 href='#'
-                onclick='handleTabClick(event)'
+                onClick={handleTabClick}
               >
                 Skills
               </a>
@@ -255,7 +278,7 @@ function PersonDetails(props) {
                 id='tab-infrastructure'
                 className='nav-link px-0 mx-2'
                 href='#'
-                onclick='handleTabClick(event)'
+                onClick={handleTabClick}
               >
                 Trainings
               </a>
