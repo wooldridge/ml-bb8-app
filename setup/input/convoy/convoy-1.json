@@ -1,0 +1,37 @@
+{
+  "type": "Convoy",
+  "name": "TRAN12312314",
+  "startPoint": "Volyn 1 Military Base",
+  "endPoint": "Zytomierz Military Base",
+  "start": "2022-04-15T16:21:01+01:00",
+  "startDate": "04/15/2022",
+  "startTime": "16:21:01 CET",
+  "eta": "2022-04-15T20:55:38+01:00",
+  "endDate": "04/15/2022",
+  "endTime": "16:21:01 CET",
+  "vehicles": "5 KrAZ Spartan trucks",
+  "route": "Highway nr 5 (route on map)",
+  "commandedBy": "Lieutenant General Yevhen",
+  "connectedToRequest": "TRAN12312314",
+  "typeOfCargo": "500 Javelin Missiles",
+  "description": "Transfer 500 Javelin missles to Zhytomyr Military Base.",
+  "convoyHistory": [
+    {
+      "date": "21.05.2022",
+      "time": "07:30",
+      "status": "Convoy on the way to its destination"
+    },
+    {
+      "time": "07:30",
+      "status": "Optimal route selected"
+    },
+    {
+      "time": "07:30",
+      "status": "Commander assigned"
+    },
+    {
+      "time": "07:30",
+      "status": "Convoy created"
+    }
+  ]
+}
