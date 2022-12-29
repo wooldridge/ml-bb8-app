@@ -1,3 +1,6 @@
+import { useContext, useState, useEffect } from 'react';
+import PanelContext from '../../store/PanelContext';
+
 import { Cross, ArrowRight } from 'akar-icons';
 import './Requests.css';
 import High from '../../images/warning-red.svg';
@@ -5,6 +8,9 @@ import Medium from '../../images/warning-orange.svg';
 import Low from '../../images/warning-green.svg';
 
 function Requests(props) {
+
+  const panelContext = useContext(PanelContext);
+
   const getRequests = () => {
     if (!props.requests.requests || props.requests.requests.length === 0) {
       return <div className='no-data'>No requests available</div>;
@@ -40,7 +46,9 @@ function Requests(props) {
                 <a
                   href='#'
                   className='link-white'
-                  onClick={props.handleMilitaryBaseOpen}
+                  onClick={() => panelContext.addPanel(
+                    {type: "location", id: 'militaryBase-1'}
+                  )}
                 >
                   {req.from}
                 </a>
@@ -79,7 +87,10 @@ function Requests(props) {
                 className='arrow-requests m-2 text-secondary'
                 strokeWidth={2}
                 size={20}
-                onClick={props.handleRequestOpen}
+                id={req.id}
+                onClick={() => panelContext.addPanel(
+                  {type: "request", id: req.id}
+                )}
               />
             </span>
           </div>
@@ -101,8 +112,9 @@ function Requests(props) {
           <select
             className='form-select form-select-sm width-auto d-inline'
             aria-label='.form-select-md example'
+            defaultValue={'date'}
           >
-            <option selected>By date</option>
+            <option value='date'>By date</option>
             <option value='1'>One</option>
             <option value='2'>Two</option>
             <option value='3'>Three</option>

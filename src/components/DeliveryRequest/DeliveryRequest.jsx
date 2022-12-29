@@ -1,9 +1,14 @@
+import { useContext } from 'react';
+import PanelContext from '../../store/PanelContext';
 import { ArrowRight, Cross, Minus, Plus } from 'akar-icons';
 import Circle from '../../images/circle.svg';
 import WarningRed from '../../images/warning-red.svg';
 import './DeliveryRequest.css';
 
 function DeliveryRequest(props) {
+
+  const panelContext = useContext(PanelContext);
+
   return (
     <div className='card-convoy card col-4 me-3'>
       <div className='card-body'>
@@ -27,17 +32,20 @@ function DeliveryRequest(props) {
               className='request-close ms-3'
               strokeWidth={2}
               size={16}
-              onClick={props.handleDelivReqClose}
+              id={props.id}
+              onClick={() => panelContext.removePanel(
+                {type: "request", id: props.id}
+              )}
             />
           </div>
         </div>
         <div className='row request-fields pb-3 mt-1 g-0'>
-          <div class='width-auto border-right pe-4'>
+          <div className='width-auto border-right pe-4'>
             <div className='form-label m-0'>Created</div>
             <div>Apr 7 at 11:21</div>
           </div>
 
-          <div class='width-auto ps-4'>
+          <div className='width-auto ps-4'>
             <div className='form-label m-0'>Assign</div>
             <div>Unassigned</div>
           </div>
@@ -67,7 +75,9 @@ function DeliveryRequest(props) {
             <a 
               className='link-white' 
               href='#'
-              onClick={props.handleMilitaryBaseOpen}
+              onClick={() => panelContext.addPanel(
+                {type: "location", id: 'militaryBase-1'}
+              )}
             >
               Zhytomyr Military Base
             </a>
