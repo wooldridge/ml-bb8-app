@@ -24,8 +24,6 @@ import { getPerson } from '../../api/api';
 
 function Map() {
 
-  const dataPerson = getPerson();
-
   const panelContext = useContext(PanelContext);
 
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -53,6 +51,7 @@ function Map() {
           {panelContext.panels.map(panel => <Panel 
             type={panel.type} 
             id={panel.id}
+            content={panel.content}
             key={panel.type + '-' + panel.id}
           />)}
 

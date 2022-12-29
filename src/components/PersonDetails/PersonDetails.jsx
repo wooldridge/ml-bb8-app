@@ -136,7 +136,7 @@ function PersonDetails(props) {
                 className='row details-item p-1 col-6 g-1'
                 data-bs-toggle='tooltip'
                 data-bs-placement='top'
-                data-bs-custom-className='custom-tooltip'
+                data-bs-custom-class='custom-tooltip'
                 data-bs-title='Last edited 07:30 21.05.2022 by Michael Cane'
               >
                 <div className='details-text width-auto'>
@@ -151,7 +151,7 @@ function PersonDetails(props) {
                 className='row details-item p-1 col-6 g-1'
                 data-bs-toggle='tooltip'
                 data-bs-placement='top'
-                data-bs-custom-className='custom-tooltip'
+                data-bs-custom-class='custom-tooltip'
                 data-bs-title='Last edited 07:30 21.05.2022 by Michael Cane'
               >
                 <div className='details-text width-auto'>
@@ -167,7 +167,7 @@ function PersonDetails(props) {
                 className='row details-item p-1 col-6 g-1'
                 data-bs-toggle='tooltip'
                 data-bs-placement='top'
-                data-bs-custom-className='custom-tooltip'
+                data-bs-custom-class='custom-tooltip'
                 data-bs-title='Last edited 07:30 21.05.2022 by Michael Cane'
               >
                 <div className='details-text width-auto col-11'>
@@ -182,7 +182,7 @@ function PersonDetails(props) {
                 className='row details-item p-1 col-6 g-1'
                 data-bs-toggle='tooltip'
                 data-bs-placement='top'
-                data-bs-custom-className='custom-tooltip'
+                data-bs-custom-class='custom-tooltip'
                 data-bs-title='Last edited 07:30 21.05.2022 by Michael Cane'
               >
                 <div className='details-text width-auto'>
@@ -199,7 +199,7 @@ function PersonDetails(props) {
               className='row details-item p-1 g-1 justify-content-between mt-3'
               data-bs-toggle='tooltip'
               data-bs-placement='top'
-              data-bs-custom-className='custom-tooltip'
+              data-bs-custom-class='custom-tooltip'
               data-bs-title='Last edited 07:30 21.05.2022 by Michael Cane'
             >
               <div className='details-text width-auto'>

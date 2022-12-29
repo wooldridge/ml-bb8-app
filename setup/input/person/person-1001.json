@@ -1,0 +1,112 @@
+{
+  "firstName": "Yevhen",
+  "lastName": "Moisiuk",
+  "rank": "Lieutenant General",
+  "dob": "1979-10-07",
+  "pob": "Chernivtsi, Ukraine",
+  "currentLocation": "Zhytomyr B2",
+  "position": "Major General Lead Commander",
+  "assignment": "24th Ukrainian Mechanized Brigade",
+  "image": "sodol.png",
+  "careerHistory": [
+    {
+      "start": "2000",
+      "end": "2004",
+      "description": "Airborne platoon commander later airborne company commander, 25 separate airborne"
+    },
+    {
+      "start": "2004",
+      "end": "2005",
+      "description": "Mechanized platoon commander, 73 separate mechanized infantry battalion (BTR and BRDM), 7 detached"
+    },
+    {
+      "start": "2008",
+      "end": "2009",
+      "description": "Chief of Operations (S-3), Ukrainian National Contingent in Kosovo"
+    },
+    {
+      "start": "2011",
+      "end": "2014",
+      "description": "Airborne platoon commander later airborne company commander, 25 separate airborne brigade"
+    }
+  ],
+  "directSubordinates": [
+    {
+      "formation": "347th IT and Signal Center, Zhytomyr",
+      "firstName": "Yevhen",
+      "middleName": "",
+      "lastName": "MOISIUK",
+      "image": "subordinate-1.jpg"
+    },
+    {
+      "formation": "80th Air Assault Brigade, Lviv",
+      "firstName": "Anatolij",
+      "middleName": "Serhijovych",
+      "lastName": "Ivanchenko",
+      "image": "subordinate-2.jpg"
+    },
+    {
+      "formation": "46th Air Assault Brigade, Poltava",
+      "firstName": "Mykhailo",
+      "middleName": "",
+      "lastName": "Zabrodskyi",
+      "image": "subordinate-3.jpg"
+    },
+    {
+      "formation": "45th Air Assault Brigade, Bolhrad",
+      "firstName": "Artem",
+      "middleName": "Havrylovych",
+      "lastName": "Sakhno",
+      "image": "subordinate-4.jpg"
+    },
+    {
+      "formation": "23rd Tank Battalion, Velykyi Kobylyn",
+      "firstName": "Petro",
+      "middleName": "Rostyslavovych",
+      "lastName": "Bilous",
+      "image": "subordinate-5.jpg"
+    }
+  ],
+  "dataSource": {
+    "id": "DB3728",
+    "localization": "Frankfurt, DE",
+    "lastSync": "17:39"
+  },
+  "editHistory": [
+    {
+      "date": "21.05.2022",
+      "time": "05:10",
+      "status": "Updated Direct Subordinates by Andrew Shultz"
+    },
+    {
+      "date": "20.05.2022",
+      "time": "06:20",
+      "status": "Updated Assignment by Michael Cane"
+    },
+    {
+      "date": "19.05.2022",
+      "time": "17:25",
+      "status": "Updated Date of Birth by Andrew Shultz"
+    },
+    {
+      "date": "16.04.2022",
+      "time": "06:30",
+      "status": "Updated Position, Prace of Birth, Current Location by Lee Hoi"
+    },
+    {
+      "date": "15.04.2022",
+      "time": "06:30",
+      "status": "Updated Skills by Andrew Shultz"
+    },
+    {
+      "date": "18.01.2021",
+      "time": "19:00",
+      "status": "Updated Position by Andrew Shultz"
+    },
+    {
+      "date": "17.12.2020",
+      "time": "15:41",
+      "status": "Record created by Michael Cane"
+    }
+  ]
+}

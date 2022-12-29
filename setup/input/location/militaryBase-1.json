@@ -1,0 +1,91 @@
+{
+  "name": "Volyn 1 Military Base",
+  "descResources": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est",
+  "descUnits": "The FGM-148 Javelin, or Advanced Anti-Tank Weapon System-Medium (AAWS-M), is an American-made portable anti-tank missile system in service since 1996, and continuously upgraded. It replaced the M47 Dragon anti-tank missile in US service.[10] Its fire-and-forget design uses automatic infrared guidance that allows the user to seek cover immediately after launch, in contrast to wire-guided systems, like the system used by the Dragon, which require a user to guide the weapon throughout the engagement. The Javelin's high explosive anti-tank (HEAT) warhead can defeat modern tanks by top attack, hitting them from above, where their armor is thinnest, and is also useful against fortifications in a direct attack flight.",
+  "facilityName": "Wolyn 1 Military Base",
+  "facilityType": "Military Base",
+  "symbol": "WMB1007",
+  "standardPersonnel": 250,
+  "resources": [
+    {
+      "type": "category",
+      "name": "Ammunition",
+      "resources": [
+        {
+          "name": "Carabin ammunition",
+          "resources": []
+        },
+        {
+          "name": "Antitank rockets",
+          "resources": [
+            {
+              "name": "Javelin missiles",
+              "number": 600
+            },
+            {
+              "name": "NLAW missiles",
+              "number": 600
+            },
+            {
+              "name": "RPG missiles",
+              "number": 600
+            }
+          ]
+        },
+        {
+          "name": "Hand grenades",
+          "resources": []
+        },
+        {
+          "name": "Pistol ammunition",
+          "resources": []
+        },
+        {
+          "name": "Special ammunition",
+          "resources": []
+        },
+        {
+          "name": "Artillery ammunition",
+          "resources": []
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "name": "Supplies",
+      "resources": []
+    },
+    {
+      "type": "category",
+      "name": "Fuel",
+      "resources": []
+    },
+    {
+      "type": "category",
+      "name": "Food",
+      "resources": []
+    },
+    {
+      "type": "category",
+      "name": "Weapons",
+      "resources": []
+    },
+    {
+      "type": "category",
+      "name": "Equipment",
+      "resources": []
+    }
+  ],
+  "operatingUnits": [
+    {
+      "type": "Unit Emblem",
+      "formation": "80th Air Assault Brigade"
+    },
+    {
+      "type": "Unit Emblem",
+      "formation": "80th Air Assault Brigade"
+    }
+  ],
+  "commanderPosition": "Present Commander",
+  "commanderName": "Major General Yevhen Moisiuk"
+}

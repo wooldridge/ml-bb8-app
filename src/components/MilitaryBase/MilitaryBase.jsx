@@ -32,7 +32,7 @@ function MilitaryBase(props) {
           </Accordion.Body>
         </Accordion.Item>
       ) : (
-        <div className='innermost d-flex justify-content-between align-items-center px-5 py-3'>
+        <div className='innermost d-flex justify-content-between align-items-center px-5 py-3' key={index}>
           <div>
             <ArrowRight className='me-3' strokeWidth={2} size={16} />
             {res.name}
@@ -348,13 +348,13 @@ function MilitaryBase(props) {
           </p>
           <div className='row mb-2'>
             <div className='col-6'>
-              <label for='created-by' className='form-label'>
+              <label className='form-label'>
                 Name of the Facility
               </label>
               <div>{props.militaryBase.facilityName}</div>
             </div>
             <div className='col-6'>
-              <label for='created-by' className='form-label'>
+              <label className='form-label'>
                 Symbol
               </label>
               <div>{props.militaryBase.symbol}</div>
@@ -362,13 +362,13 @@ function MilitaryBase(props) {
           </div>
           <div className='row pb-3 request-fields'>
             <div className='col-6'>
-              <label for='created-by' className='form-label'>
+              <label className='form-label'>
                 Facility Type
               </label>
               <div>{props.militaryBase.facilityType}</div>
             </div>
             <div className='col-6'>
-              <label for='created-by' className='form-label'>
+              <label className='form-label'>
                 Standard Personnel
               </label>
               <div>{props.militaryBase.standardPersonnel}</div>
