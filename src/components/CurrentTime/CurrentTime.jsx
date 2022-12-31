@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './CurrentTime.css';
+
 function CurrentTime() {
   const locale = 'en';
   const [today, setDate] = React.useState(new Date()); // Save the current date to be able to trigger an update
@@ -29,10 +31,10 @@ function CurrentTime() {
 
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   return (
-    <footer className='footer mt-auto py-3 bg-black'>
-      <span className='text-white ps-3'>Current Time</span>
-      <span className='text-white ps-3'>{date}</span>
-      <span className='text-white ps-3'>
+    <footer className='footer mt-auto py-3'>
+      <span className='ps-3'>Current Time</span>
+      <span className='ps-3'>{date}</span>
+      <span className='ps-3'>
         {timeZone} {time}
       </span>
     </footer>

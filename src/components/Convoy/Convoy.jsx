@@ -42,7 +42,7 @@ function Convoy(props) {
   };
 
   return (
-    <div className='card-convoy card col-4 me-3'>
+    <div className='card-convoy card col-4 me-2 mt-2'>
       <div className='card-body'>
         <div className='row details-top justify-content-between'>
           <nav aria-label='breadcrumb'>
@@ -71,13 +71,17 @@ function Convoy(props) {
         </h5>
         <div className='row justify-content-between pt-3 align-items-center'>
           <div className='fs-5 width-auto'>{props.convoy.startPoint}</div>
-          <ArrowRight className='width-auto' strokeWidth={2} size={20} />
+          <ArrowRight
+            className='width-auto text-dark'
+            strokeWidth={2}
+            size={20}
+          />
           <div className='fs-5 text-end width-auto'>
             {props.convoy.endPoint}
           </div>
         </div>
 
-        <div className='row pt-3 justify-content-between request-fields pb-3'>
+        <div className='row pt-3 justify-content-between request-fields pb-3 g-0'>
           <div className='width-auto'>
             <div className='form-label m-0'>Start date</div>
             <div>{getDateFormatted(props.convoy.start)}</div>
@@ -95,17 +99,13 @@ function Convoy(props) {
             <div className='col'>
               <div className='form-label m-0'>Vehicles</div>
               <div>
-                <a className='text-white' href='#'>
-                  {props.convoy.vehicles}
-                </a>
+                <a href='#'>{props.convoy.vehicles}</a>
               </div>
             </div>
             <div className='col'>
               <div className='form-label m-0'>Route</div>
               <div>
-                <a className='text-white' href='#'>
-                  {props.convoy.route}
-                </a>
+                <a href='#'>{props.convoy.route}</a>
               </div>
             </div>
           </div>
@@ -113,9 +113,7 @@ function Convoy(props) {
             <div className='col'>
               <div className='form-label m-0'>Commaned by</div>
               <div>
-                <a className='text-white' href='#'>
-                  {props.convoy.commandedBy}
-                </a>
+                <a href='#'>{props.convoy.commandedBy}</a>
               </div>
             </div>
             <div className='col'>
@@ -127,9 +125,7 @@ function Convoy(props) {
             <div className='col'>
               <div className='form-label m-0'>type of cargo</div>
               <div>
-                <a className='text-white' href='#'>
-                  {props.convoy.typeOfCargo}
-                </a>
+                <a href='#'>{props.convoy.typeOfCargo}</a>
               </div>
             </div>
             <div className='col'>
@@ -141,7 +137,7 @@ function Convoy(props) {
 
         <div className='request-fields py-3'>
           <div className='fs-4 pb-1'>Description</div>
-          <div>{props.convoy.description}</div>
+          <div className='description'>{props.convoy.description}</div>
         </div>
 
         <div className='request-fields py-3'>

@@ -10,8 +10,8 @@ import Settings from '../../images/settings.svg';
 
 export default function Navbar() {
   return (
-    <div className='navbar navbar-expand-xl navbar-dark bg-dark mb-2'>
-      <div className='container-fluid'>
+    <div className='navbar navbar-expand-xl p-0'>
+      <div className='container-fluid align-items-center'>
         <a className='navbar-brand mt-2 mt-lg-0 pe-4' href='#'>
           <img src={Logo} height='30' alt='' loading='lazy' />
         </a>
@@ -56,7 +56,7 @@ export default function Navbar() {
                 </a>
               </div>
             </li>
-            <li className='nav-item dropdown d-flex align-items-center'>
+            <li className='nav-item dropdown d-flex align-items-center view-type pe-2'>
               <a
                 className='nav-link dropdown-toggle text-uppercase px-3'
                 href='#'
@@ -84,28 +84,41 @@ export default function Navbar() {
                 </a>
               </div>
             </li>
-
-            <li className='nav-item d-flex align-items-center active px-3'>
-                <Link to='/dashboard'>
-                    <img className='p-2' src={Dashboard} />
-                    Dashboard
-                </Link>
+            <li className='nav-item d-flex align-items-center active ms-4'>
+              <Link to='/dashboard' className='nav-link'>
+                <span class='material-symbols-outlined icon-nav icon-nav-dashboard'>
+                  bar_chart
+                </span>
+                Dashboard
+              </Link>
             </li>
-            <li className='nav-item d-flex align-items-center inactive px-3'>
-                <Link to='/map'>
-                    Ukraine Logistics Operations
-                    <Cross className='m-2' strokeWidth={2} size={16} />
-                </Link>
+            <li className='nav-item d-flex align-items-center ps-4'>
+              <Link to='/dashboard'>
+                <span class='material-symbols-outlined icon-nav icon-nav-map'>
+                  public
+                </span>
+                Map
+              </Link>
             </li>
-            <li className='nav-item d-flex align-items-center inactive px-3'>
+            <li className='nav-item d-flex align-items-center ps-4'>
+              <Link to='/map'>
+                Ukraine Logistics Operations
+                <span class='material-symbols-outlined icon-nav icon-nav-cross'>
+                  close
+                </span>
+              </Link>
+            </li>
+            <li className='nav-item d-flex align-items-center ps-3'>
               <a className='nav-link' href='#'>
                 Tasks
-                <Cross className='m-2' strokeWidth={2} size={16} />
+                <span class='material-symbols-outlined icon-nav icon-nav-cross'>
+                  close
+                </span>
               </a>
             </li>
-            <li className='nav-item d-flex align-items-center px-3'>
-              <a className='nav-link' href='#'>
-                <Plus className='m-2' strokeWidth={2} size={16} />
+            <li className='nav-item d-flex align-items-center ps-3'>
+              <a className='nav-link btn-add-new' href='#'>
+                <span class='material-symbols-outlined icon-nav'>add</span>
                 Add New
               </a>
             </li>

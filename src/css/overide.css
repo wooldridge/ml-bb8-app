@@ -1,12 +1,15 @@
 @import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 html {
   font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 @supports (font-variation-settings: normal) {
   html {
-    font-family: 'Inter var', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 }
 
@@ -31,7 +34,8 @@ html {
 }
 
 body {
-  background-color: #000;
+  background-color: #d9d9d9;
+  font-family: 'Poppins';
 }
 
 .login {
@@ -43,49 +47,6 @@ body {
 .ai-plus {
   color: white;
 }
-
-.navbar-brand {
-  padding-left: 10px;
-}
-
-.navbar {
-  background-color: black !important;
-}
-
-.nav-link {
-  color: white;
-}
-
-.inactive,
-.inactive .nav-link,
-.ai-search {
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-
-.view-type {
-  font-size: 10px;
-}
-
-.navbar .form-control,
-.navbar .form-control:focus {
-  background-color: transparent;
-  border: solid 1px #272727;
-  box-shadow: none;
-  color: #fff;
-  padding-left: 35px;
-}
-
-.navbar .search {
-  position: absolute;
-  margin-left: 10px;
-  padding: 1px;
-}
-
-/* .nav-searchbar {
-  padding-left: 25px;
-  border-left: solid 1px #272727;
-  border-right: solid 1px #272727;
-} */
 
 .icon-badge,
 .icon-badge-sidebar {
@@ -104,13 +65,6 @@ body {
 .icon-badge-sidebar {
   bottom: 18px;
   left: 45px;
-}
-
-.alert-primary {
-  background-color: #00ff19;
-  color: #000;
-  border-radius: 0;
-  border: none;
 }
 
 .badge-container {
@@ -139,9 +93,9 @@ body {
 .btn-secondary {
   background-color: transparent;
   font-size: 16px;
-  border: 2px solid #ffffff;
+  border: 2px solid #0052cc;
   border-radius: 3px;
-  color: #ffffff;
+  color: #0052cc;
   padding: 12px 24px;
   cursor: pointer;
 }
@@ -179,7 +133,7 @@ body {
 thead tr th {
   font-size: 12px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.4);
 }
 
 tbody tr td {
@@ -226,14 +180,6 @@ tbody tr td {
   cursor: pointer;
 }
 
-footer {
-  font-size: 14px;
-}
-
-.dropdown-toggle::after {
-  color: rgba(255, 255, 255, 0.4);
-}
-
 table {
   overflow: scroll;
 }
@@ -264,7 +210,7 @@ table {
 
 .accordion-button::after {
   margin-left: 10px;
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
 }
 
 .card-body .accordion-button::after {
@@ -309,7 +255,7 @@ table {
 .card-nav,
 .new-ticket-header,
 .request-fields {
-  border-bottom: solid 1px #6a7381;
+  border-bottom: solid 1px #e6eaf1;
 }
 
 .breadcrumb-row > *,
@@ -320,8 +266,13 @@ table {
 
 .breadcrumb-item {
   font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  color: white !important;
+  color: #929eb1;
+}
+
+.breadcrumb-item.active {
+  color: #212427;
 }
 
 .breadcrumb-item a {
@@ -329,7 +280,7 @@ table {
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  color: white;
+  color: #929eb1;
 }
 
 .card-body .nav-link {
@@ -352,11 +303,15 @@ table {
   border-radius: 6px;
 }
 
-.card-convoy,
+/* .card-convoy,
 .card-commander,
 .popup-incident,
 .card-incident {
   background: rgba(39, 41, 47, 0.9);
+} */
+
+.card-body {
+  color: #212427;
 }
 
 .popup-incident {
@@ -463,7 +418,7 @@ table {
 
 .card-details,
 .card-dashboard {
-  background: #1b1c21;
+  color: #212427;
 }
 
 .card-dashboard {
@@ -510,10 +465,6 @@ table {
   border-bottom: solid 2px rgba(24, 25, 29, 0.9);
 }
 
-.accordion-button:not(.collapsed) {
-  color: white;
-}
-
 .form-label {
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -536,8 +487,7 @@ table {
 
 .form-select {
   background-color: transparent;
-  color: white;
-  border: 1px solid #6a7381;
+  border: 1px solid rgba(33, 36, 39, 0.2);
   border-radius: 2px;
   cursor: pointer;
 }
@@ -582,8 +532,8 @@ table tbody tr td {
 }
 
 .btn-primary {
-  background-color: #2ceed3;
-  color: #000;
+  background-color: #0052cc;
+  color: #fff;
   border: none;
   padding: 12px 24px;
 }
@@ -630,12 +580,6 @@ table tbody tr td {
   width: auto;
 }
 
-#type-accordions {
-  position: absolute;
-  left: 10px;
-  width: 20%;
-  display: inline-block;
-}
 .tab-content.selected {
   display: block;
 }
@@ -665,11 +609,11 @@ table tbody tr td {
 
 .text-secondary,
 .text-secondary a {
-  color: #6a7381 !important;
+  color: #212427 !important;
 }
 
 .text-dark {
-  color: rgba(106, 115, 129, 0.4) !important;
+  color: #929eb1 !important;
 }
 
 .details-top-text {
@@ -838,12 +782,6 @@ table tbody tr td {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-.accordion-button {
-  color: white;
-  display: flex;
-  justify-content: space-between;
-}
-
 .form-check-label {
   position: absolute;
   top: 6px;
@@ -880,4 +818,16 @@ table tbody tr td {
   top: 0;
   right: 80px;
   width: 100%;
+}
+
+.form-select-sm {
+  font-size: 12px;
+}
+
+.description {
+  font-family: 'Inter';
+}
+
+table {
+  font-family: 'Inter';
 }

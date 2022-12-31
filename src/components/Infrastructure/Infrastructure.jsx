@@ -98,7 +98,7 @@ function Infrastructure() {
             </div>
           </div>
           <div className='table-responsive'>
-            <table className='table table-borderless text-white mt-4'>
+            <table className='table table-borderless mt-4'>
               <thead>
                 <tr>
                   <th scope='col'></th>

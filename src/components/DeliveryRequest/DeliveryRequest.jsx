@@ -6,7 +6,6 @@ import WarningRed from '../../images/warning-red.svg';
 import './DeliveryRequest.css';
 
 function DeliveryRequest(props) {
-
   const panelContext = useContext(PanelContext);
 
   return (
@@ -33,9 +32,9 @@ function DeliveryRequest(props) {
               strokeWidth={2}
               size={16}
               id={props.id}
-              onClick={() => panelContext.removePanel(
-                {type: "request", id: props.id}
-              )}
+              onClick={() =>
+                panelContext.removePanel({ type: 'request', id: props.id })
+              }
             />
           </div>
         </div>
@@ -72,12 +71,15 @@ function DeliveryRequest(props) {
               Javelin
             </a>{' '}
             from{' '}
-            <a 
-              className='link-white' 
+            <a
+              className='link-white'
               href='#'
-              onClick={() => panelContext.addPanel(
-                {type: "location", id: 'militaryBase-1'}
-              )}
+              onClick={() =>
+                panelContext.addPanel({
+                  type: 'location',
+                  id: 'militaryBase-1',
+                })
+              }
             >
               Zhytomyr Military Base
             </a>
@@ -108,9 +110,7 @@ function DeliveryRequest(props) {
             <div className='col'>
               <div className='form-label m-0'>Type of resources required</div>
               <div>
-                <a className='text-white' href='#'>
-                  Javelin missles
-                </a>
+                <a href='#'>Javelin missles</a>
               </div>
             </div>
             <div className='col'>
@@ -122,9 +122,7 @@ function DeliveryRequest(props) {
             <div className='col'>
               <div className='form-label m-0'>Requested time of delivery</div>
               <div>
-                <a className='text-white' href='#'>
-                  04/18/2022 24:00:00 CET
-                </a>
+                <a href='#'>04/18/2022 24:00:00 CET</a>
               </div>
             </div>
           </div>

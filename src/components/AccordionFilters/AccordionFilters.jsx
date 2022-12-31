@@ -30,7 +30,7 @@ function AccordionFilters(props) {
     }
     return props.labels.map((label, index) => {
       return (
-        <div className='card bg-dark pb-2' key={index}>
+        <div className='card pb-2' key={index}>
           <div className='card-body fs-7 p-0 px-3'>
             <div className={getCheckStyle(label)}>
               <Form.Check
@@ -47,7 +47,7 @@ function AccordionFilters(props) {
   };
   return (
     <div id='type-accordions'>
-      <Accordion className='accordion-dark' defaultActiveKey='0'>
+      <Accordion defaultActiveKey='0'>
         <Accordion.Item eventKey='1'>
           <Accordion.Header>{props.title}</Accordion.Header>
           <Accordion.Body>{getLabels()}</Accordion.Body>

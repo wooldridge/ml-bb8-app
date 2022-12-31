@@ -18,3 +18,10 @@
   font-size: 10px;
   color: rgba(255, 255, 255, 0.4);
 }
+
+.sidebar {
+  background-color: white;
+  width: 80px;
+  height: 100vh;
+  border-top: solid 1px #d9d9d9;
+}

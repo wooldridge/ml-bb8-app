@@ -8,21 +8,12 @@ import './Sidebar.css';
 function Sidebar(props) {
   return (
     <div style={{ width: '100%' }}>
-      <div
-        className='d-flex flex-column float-end'
-        id='sidebar'
-        style={{
-          width: '80px',
-          height: '100vh',
-          backgroundColor: 'black !important',
-          borderTop: 'solid 1px #272A33',
-        }}
-      >
+      <div className='sidebar d-flex flex-column float-end' id='sidebar'>
         <ul className='nav nav-pills nav-flush flex-column mb-auto text-center'>
           <li>
             <a
               href='#'
-              className='li-requests d-block py-3 text-white text-decoration-none'
+              className='li-requests d-block py-3 text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
@@ -45,7 +36,7 @@ function Sidebar(props) {
           <li>
             <a
               href='#'
-              className='li-reports d-block py-3 text-white text-decoration-none'
+              className='li-reports d-block py-3 text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
@@ -67,7 +58,7 @@ function Sidebar(props) {
           <li>
             <a
               href='#'
-              className='li-notifications d-block py-3 text-white text-decoration-none'
+              className='li-notifications d-block py-3 text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
@@ -89,7 +80,7 @@ function Sidebar(props) {
           <li>
             <a
               href='#'
-              className='li-incidents d-block py-3 text-white text-decoration-none'
+              className='li-incidents d-block py-3 text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
@@ -111,7 +102,7 @@ function Sidebar(props) {
           <li>
             <a
               href='#'
-              className='li-alerts d-block py-3 text-white text-decoration-none'
+              className='li-alerts d-block py-3 text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'

@@ -1,8 +1,77 @@
-.search {
-  color: rgba(255, 255, 255, 0.4) !important;
+.navbar-brand {
+  padding-left: 10px;
+  border-right: solid 1px #dddddd;
+  margin-right: 7px;
 }
 
-.nav-item a {
-  color: white;
-  text-decoration: none;
+.navbar {
+  background-color: white;
 }
+
+.nav-link {
+  color: #212427;
+}
+
+.nav-item.active a {
+  color: #0052cc;
+}
+
+/* .nav-item.active {
+  border-bottom: solid 3px #0052cc;
+} */
+
+.nav-item a {
+  color: #929eb1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dropdown-toggle::after {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.navbar .form-control,
+.navbar .form-control:focus {
+  background-color: transparent;
+  border: solid 1px #c7c8c9;
+  box-shadow: none;
+  color: #212427;
+  padding-left: 35px;
+  border-radius: 2px;
+}
+
+.navbar .search {
+  position: absolute;
+  margin-left: 10px;
+  padding: 1px;
+}
+
+.search {
+  color: #929eb1;
+}
+
+.btn-add-new {
+  color: #0052cc !important;
+}
+
+.icon-nav {
+  vertical-align: bottom;
+  font-size: 20px;
+  padding-bottom: 1px;
+}
+
+.icon-nav-dashboard,
+.icon-nav-map {
+  padding-right: 5px;
+}
+
+.icon-nav-cross {
+  padding-left: 5px;
+}
+
+/* .nav-searchbar {
+  padding-left: 25px;
+  border-left: solid 1px #272727;
+  border-right: solid 1px #272727;
+} */

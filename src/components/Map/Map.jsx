@@ -21,9 +21,9 @@ import DirectSubordinates from '../DirectSubordinates/DirectSubordinates';
 import convoyToDisplay from '../../data/convoy-1.json';
 import requestsToDisplay from '../../data/requests.json';
 import { getPerson } from '../../api/api';
+import Resource from '../Resource/Resource';
 
 function Map() {
-
   const panelContext = useContext(PanelContext);
 
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -47,15 +47,17 @@ function Map() {
       <Sidebar handleRequestsClick={handleRequestsClick} />
       <div className='outer-container'>
         <div className='inner-container'>
-
-          {panelContext.panels.map(panel => <Panel 
-            type={panel.type} 
-            id={panel.id}
-            content={panel.content}
-            key={panel.type + '-' + panel.id}
-          />)}
+          {panelContext.panels.map((panel) => (
+            <Panel
+              type={panel.type}
+              id={panel.id}
+              content={panel.content}
+              key={panel.type + '-' + panel.id}
+            />
+          ))}
 
           {/* <Convoy convoy={convoyToDisplay} /> */}
+          <Resource />
           {/* <NewTicket /> */}
 
           {/* <Position details={dataPerson} /> */}
@@ -71,7 +73,6 @@ function Map() {
               handleRequestOpen={handleRequestOpen}
             />
           ) : null}
-          
         </div>
       </div>
 
@@ -80,7 +81,6 @@ function Map() {
         labels={['Level 1', 'Level 2']}
         handleClick={handleAccordionClick}
       />
-
     </div>
   );
 }

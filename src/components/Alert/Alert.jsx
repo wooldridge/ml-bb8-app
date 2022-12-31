@@ -1,8 +1,9 @@
 import { InfoFill } from 'akar-icons';
+import './Alert.css';
 
 function Alert() {
   return (
-    <div className='alert alert-primary mb-0 text-center' role='alert'>
+    <div className='alert alert-primary mb-0 text-center p-2' role='alert'>
       <InfoFill className='m-2 align-items-center' strokeWidth={2} size={16} />
       UNCLASSIFIED//FOR TESTING PURPOSES ONLY
     </div>
