@@ -1,3 +1,31 @@
 .img-javelin {
   max-width: 250px;
 }
+
+.table-level {
+  width: 45px;
+}
+
+.table-arrow-cont {
+  width: 75px;
+  text-align: end;
+}
+
+.table-arrow {
+  font-size: 22px;
+  color: #929eb1;
+}
+
+.table-arrow:hover {
+  color: #212427;
+  cursor: pointer;
+}
+
+.levels-table-row {
+  line-height: 40px;
+  border-bottom: solid 1px rgba(106, 115, 129, 0.2);
+}
+
+.levels-table-row:last-of-type {
+  border-bottom: none;
+}

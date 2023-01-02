@@ -1,6 +1,8 @@
 import { ArrowRight, Cross, Minus } from 'akar-icons';
 import Javelin from '../../images/javelin.png';
 import BarsHigh from '../../images/bars-high.svg';
+import BarsMed from '../../images/bars-med.svg';
+import BarsLow from '../../images/bars-low.svg';
 
 import './Resource.css';
 
@@ -43,7 +45,7 @@ function Resource() {
 
         <div className='row justify-content-between pb-3 mt-3 g-0'>
           <div className='col-xl-6 col-lg-12 p-1'>
-            <h5 className='card-title fs-4'>Javelin missles</h5>
+            <h5 className='card-title fs-4'>Javelin missiles</h5>
             <div className='form-label'>Anti-tank rockets</div>
             <div className='description fs-7'>
               The FGM-148 Javelin, or Advanced Anti-Tank Weapon System-Medium
@@ -121,24 +123,57 @@ function Resource() {
           id='tab-stock-level-content'
           className='tab-content stock-level selected'
         >
-          <div className='row justify-content-between'>
-            <div className='form-label width-auto'>Warehouse</div>
-            <div className='form-label width-auto'>Number of Items</div>
-          </div>
-
-          <div className='row justify-content-between'>
-            <div className='row width-auto'>
-              <img src={BarsHigh} className='width-auto' />
-              <div className='width-auto'>MWH Kiev 1</div>
-            </div>
-
-            <div className='row width-auto'>
-              <div className='width-auto'>150</div>
-              <span className='material-symbols-outlined width-auto'>
-                arrow_forward
-              </span>
-            </div>
-          </div>
+          <table className='table table-borderless mb-0'>
+            <thead>
+              <tr>
+                <th scope='col'></th>
+                <th className='form-label col-3' scope='col'>
+                  Warehouse
+                </th>
+                <th className='form-label' scope='col'>
+                  # of items
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className='levels-table-row'>
+                <td scope='row' className='table-level pt-1'>
+                  <img src={BarsHigh} />
+                </td>
+                <td>MWH Kiev 1</td>
+                <td>150</td>
+                <td className='ps-3 table-arrow-cont pe-0'>
+                  <span className='material-symbols-outlined table-arrow '>
+                    arrow_forward
+                  </span>
+                </td>
+              </tr>
+              <tr className='levels-table-row'>
+                <td scope='row' className='table-level pt-1'>
+                  <img src={BarsLow} />
+                </td>
+                <td>MWH Kiev 1</td>
+                <td>15</td>
+                <td className='ps-3 table-arrow-cont pe-0'>
+                  <span className='material-symbols-outlined table-arrow '>
+                    arrow_forward
+                  </span>
+                </td>
+              </tr>
+              <tr className='levels-table-row'>
+                <td scope='row' className='table-level pt-1'>
+                  <img src={BarsMed} />
+                </td>
+                <td>MWH Kiev 1</td>
+                <td>90</td>
+                <td className='ps-3 table-arrow-cont pe-0'>
+                  <span className='material-symbols-outlined table-arrow '>
+                    arrow_forward
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
