@@ -289,12 +289,12 @@ table {
   line-height: 20px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  --bs-nav-link-hover-color: white;
+  --bs-nav-link-hover-color: #0052cc;
 }
 
 .card-body a.nav-link.active {
-  color: #2dfee1;
-  border-bottom: solid 2px #2dfee1;
+  color: #0052cc;
+  border-bottom: solid 2px #0052cc;
 }
 
 .card {
