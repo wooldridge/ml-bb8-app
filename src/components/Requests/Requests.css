@@ -1,5 +1,4 @@
 .requests-close {
-  background: #27292f;
   border-radius: 3px;
   padding: 5px;
   font-size: 0.8rem;
@@ -7,7 +6,7 @@
 
 .requests-close:hover {
   cursor: pointer;
-  background: hsl(225, 9%, 30%);
+  background: hsl(225, 9%, 90%);
 }
 
 .requests-title {
@@ -15,11 +14,10 @@
 }
 
 .card-requests {
-  background: hsl(224, 100%, 3%, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 0 !important;
   position: absolute;
   right: -16px;
-  border-top: solid 1px #272a33;
   backdrop-filter: blur(10px);
 }
 
@@ -33,16 +31,20 @@
 }
 
 .tag-requests:hover {
-  border: 1px solid #2dfee1;
-  color: #2dfee1;
+  border: 1px solid #0052cc;
+  color: #0052cc;
   cursor: pointer;
+}
+
+.arrow-requests {
+  color: #929eb1 !important;
 }
 
 .arrow-requests:hover {
   cursor: pointer;
-  color: white !important;
+  color: #212427 !important;
 }
 
 .bottom-border {
-  border-bottom: solid 1px #1b2130;
+  border-bottom: solid 1px rgba(106, 115, 129, 0.2);
 }

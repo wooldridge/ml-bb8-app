@@ -9,7 +9,7 @@ function DeliveryRequest(props) {
   const panelContext = useContext(PanelContext);
 
   return (
-    <div className='card-convoy card col-4 me-3'>
+    <div className='card-convoy card col-4 me-2 mt-2'>
       <div className='card-body'>
         <div className='row details-top justify-content-between'>
           <nav aria-label='breadcrumb'>
@@ -67,12 +67,12 @@ function DeliveryRequest(props) {
         <div className='card-title pt-1 pb-3 fs-4 request-fields'>
           Delivery request
           <div>
-            <a className='link-white' href='#'>
+            <a className='link-dark' href='#'>
               Javelin
             </a>{' '}
             from{' '}
             <a
-              className='link-white'
+              className='link-dark'
               href='#'
               onClick={() =>
                 panelContext.addPanel({
@@ -86,8 +86,8 @@ function DeliveryRequest(props) {
           </div>
         </div>
         <div className='request-fields mt-3 pb-3'>
-          <div className='fs-5 pb-1'>Description</div>
-          <div>
+          <div className='fs-5 pb-2'>Description</div>
+          <div className='description'>
             We have received an urgent request of 500 Javelin missles delivery
             for front units. We have not enough stock to meet their reuirments.
             Check stock levels of nearby werehouses and organize delivery to
@@ -99,30 +99,34 @@ function DeliveryRequest(props) {
           <div className='row py-2'>
             <div className='col'>
               <div className='form-label m-0'>Requesting Unit</div>
-              <div>26th Airborne Brigade Zytomir</div>
+              <div className='fs-7'>26th Airborne Brigade Zytomir</div>
             </div>
             <div className='col'>
               <div className='form-label m-0'>Type</div>
-              <div>Resources delivery request</div>
+              <div className='fs-7'>Resources delivery request</div>
             </div>
           </div>
           <div className='row pb-3'>
             <div className='col'>
               <div className='form-label m-0'>Type of resources required</div>
-              <div>
-                <a href='#'>Javelin missles</a>
+              <div className='fs-7'>
+                <a className='link-dark' href='#'>
+                  Javelin missles
+                </a>
               </div>
             </div>
             <div className='col'>
               <div className='form-label m-0'>Amount required</div>
-              <div>500 pieces</div>
+              <div className='fs-7'>500 pieces</div>
             </div>
           </div>
           <div className='row pb-3'>
             <div className='col'>
               <div className='form-label m-0'>Requested time of delivery</div>
-              <div>
-                <a href='#'>04/18/2022 24:00:00 CET</a>
+              <div className='fs-7'>
+                <a className='link-dark' href='#'>
+                  04/18/2022 24:00:00 CET
+                </a>
               </div>
             </div>
           </div>

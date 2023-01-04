@@ -8,33 +8,39 @@ import Accordion from 'react-bootstrap/Accordion';
 import './MilitaryBase.css';
 
 function MilitaryBase(props) {
-
   const panelContext = useContext(PanelContext);
 
   const getResources = (resources, eventKey, level) => {
     return resources.map((res, index) => {
       return res.resources !== undefined ? (
-        <Accordion.Item
-          className='accordion-item-gray'
-          eventKey={eventKey + '-' + index}
-          key={index}
-        >
+        <Accordion.Item eventKey={eventKey + '-' + index} key={index}>
           <Accordion.Header>
             {level > 0 ? (
-              <ArrowRight className='me-3' strokeWidth={2} size={16} />
+              <ArrowRight
+                className='accordion-arrow me-3'
+                strokeWidth={2}
+                size={16}
+              />
             ) : null}
             {res.name}
           </Accordion.Header>
           <Accordion.Body className='sub-accordion-body'>
-            <Accordion className='accordion-gray accordion-flush pt-1'>
+            <Accordion className='accordion-flush pt-1'>
               {getResources(res.resources, eventKey + '-' + index, level + 1)}
             </Accordion>
           </Accordion.Body>
         </Accordion.Item>
       ) : (
-        <div className='innermost d-flex justify-content-between align-items-center px-5 py-3' key={index}>
+        <div
+          className='innermost d-flex justify-content-between align-items-center px-5 py-3'
+          key={index}
+        >
           <div>
-            <ArrowRight className='me-3' strokeWidth={2} size={16} />
+            <ArrowRight
+              className='accordion-arrow me-3'
+              strokeWidth={2}
+              size={16}
+            />
             {res.name}
             <div className='mt-2'>
               <span className='accordion-badge px-2 py-1 me-1'>
@@ -97,10 +103,10 @@ function MilitaryBase(props) {
     });
     const contentToShow = document.getElementById(event.target.id + '-content');
     contentToShow.classList.add('selected');
-  }
+  };
 
   return (
-    <div className='card card-convoy col-4 me-3'>
+    <div className='card card-convoy col-4 me-2 mt-2'>
       <div className='card-body'>
         <div className='row breadcrumb-row pb-2 justify-content-between g-0'>
           <nav aria-label='breadcrumb'>
@@ -116,16 +122,18 @@ function MilitaryBase(props) {
               </li>
             </ol>
           </nav>
-          <div className='action-icons'>
-            <Minus strokeWidth={2} size={16} />
-            <Cross
-              className='panel-close ms-3'
-              strokeWidth={2}
-              size={16}
-              onClick={() => panelContext.removePanel(
-                {type: "location", id: props.id}
-              )}
-            />
+          <div className='row action-icons'>
+            <div className='container-icon ms-3 width-auto'>
+              <Minus strokeWidth={2} size={16} />
+            </div>
+            <div
+              className='container-icon ms-3 width-auto'
+              onClick={() =>
+                panelContext.removePanel({ type: 'location', id: props.id })
+              }
+            >
+              <Cross className='panel-close' strokeWidth={2} size={16} />
+            </div>
           </div>
         </div>
 
@@ -200,9 +208,9 @@ function MilitaryBase(props) {
           id='tab-resources-content'
           className='tab-content resources selected'
         >
-          <p className='card-text'>{props.militaryBase.descResources}</p>
+          <p className='description'>{props.militaryBase.descResources}</p>
 
-          <Accordion className='accordion-gray accordion-flush pt-1'>
+          <Accordion className='accordion-flush pt-1'>
             {getResources(props.militaryBase.resources, 'level-0', 0)}
             {/* <Accordion.Item className='accordion-item-gray' eventKey='0'>
               <Accordion.Header>Ammunition</Accordion.Header>
@@ -343,35 +351,27 @@ function MilitaryBase(props) {
           </Accordion>
         </div>
         <div id='tab-units-content' className='tab-content units'>
-          <p className='card-text pb-3 request-fields'>
+          <p className='card-text pb-3 request-fields fs-7'>
             {props.militaryBase.descUnits}
           </p>
           <div className='row mb-2'>
             <div className='col-6'>
-              <label className='form-label'>
-                Name of the Facility
-              </label>
-              <div>{props.militaryBase.facilityName}</div>
+              <label className='form-label'>Name of the Facility</label>
+              <div className='fs-7'>{props.militaryBase.facilityName}</div>
             </div>
             <div className='col-6'>
-              <label className='form-label'>
-                Symbol
-              </label>
-              <div>{props.militaryBase.symbol}</div>
+              <label className='form-label'>Symbol</label>
+              <div className='fs-7'>{props.militaryBase.symbol}</div>
             </div>
           </div>
           <div className='row pb-3 request-fields'>
             <div className='col-6'>
-              <label className='form-label'>
-                Facility Type
-              </label>
-              <div>{props.militaryBase.facilityType}</div>
+              <label className='form-label'>Facility Type</label>
+              <div className='fs-7'>{props.militaryBase.facilityType}</div>
             </div>
             <div className='col-6'>
-              <label className='form-label'>
-                Standard Personnel
-              </label>
-              <div>{props.militaryBase.standardPersonnel}</div>
+              <label className='form-label'>Standard Personnel</label>
+              <div className='fs-7'>{props.militaryBase.standardPersonnel}</div>
             </div>
           </div>
           <div className='operating-units mt-3'>
@@ -389,12 +389,15 @@ function MilitaryBase(props) {
                       {props.militaryBase.commanderPosition}
                     </div>
                     <div>
-                      <a 
-                        className='link-white' 
+                      <a
+                        className='link-dark'
                         href='#'
-                        onClick={() => panelContext.addPanel(
-                          {type: "person", id: 'person-1001'}
-                        )}
+                        onClick={() =>
+                          panelContext.addPanel({
+                            type: 'person',
+                            id: 'person-1001',
+                          })
+                        }
                       >
                         {props.militaryBase.commanderName}
                       </a>

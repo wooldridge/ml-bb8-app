@@ -1,9 +1,9 @@
-.li-requests:hover .icon-requests,
+/* .li-requests:hover .icon-requests,
 .li-reports:hover .icon-reports,
 .li-notifications:hover .icon-notifications,
 .li-incidents:hover .icon-incidents,
 .li-alerts:hover .icon-alerts {
-  filter: brightness(2000%);
+  filter: brightness(0%);
 }
 
 .li-requests:hover .label-requests,
@@ -12,11 +12,11 @@
 .li-incidents:hover .label-incidents,
 .li-alerts:hover .label-alerts {
   color: white;
-}
+} */
 
 .sidebar-label {
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.4);
+  color: #929eb1;
 }
 
 .sidebar {

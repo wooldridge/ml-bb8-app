@@ -8,7 +8,6 @@ import Medium from '../../images/warning-orange.svg';
 import Low from '../../images/warning-green.svg';
 
 function Requests(props) {
-
   const panelContext = useContext(PanelContext);
 
   const getRequests = () => {
@@ -24,7 +23,7 @@ function Requests(props) {
           <div className='col-xl-7 col-lg-12 pb-3'>
             <div>
               <span className='fs-8'>
-                <a href='#' className='link-white'>
+                <a href='#' className='text-secondary'>
                   {req.startPoint}
                 </a>
               </span>
@@ -34,7 +33,7 @@ function Requests(props) {
                 size={12}
               />
               <span className='fs-8'>
-                <a href='#' className='link-white'>
+                <a href='#' className='text-secondary'>
                   {req.endPoint}
                 </a>
               </span>
@@ -45,10 +44,13 @@ function Requests(props) {
                 {req.from ? ' from ' : null}
                 <a
                   href='#'
-                  className='link-white'
-                  onClick={() => panelContext.addPanel(
-                    {type: "location", id: 'militaryBase-1'}
-                  )}
+                  className='text-secondary'
+                  onClick={() =>
+                    panelContext.addPanel({
+                      type: 'location',
+                      id: 'militaryBase-1',
+                    })
+                  }
                 >
                   {req.from}
                 </a>
@@ -84,13 +86,13 @@ function Requests(props) {
 
             <span className='width-auto'>
               <ArrowRight
-                className='arrow-requests m-2 text-secondary'
+                className='arrow-requests m-2'
                 strokeWidth={2}
                 size={20}
                 id={req.id}
-                onClick={() => panelContext.addPanel(
-                  {type: "request", id: req.id}
-                )}
+                onClick={() =>
+                  panelContext.addPanel({ type: 'request', id: req.id })
+                }
               />
             </span>
           </div>
@@ -99,7 +101,7 @@ function Requests(props) {
     });
   };
   return (
-    <div className='card-requests card col-4 me-3'>
+    <div className='card-requests card col-4 me-4 mt-2'>
       <div className='card-body'>
         <div className='pb-3'>
           <Cross
