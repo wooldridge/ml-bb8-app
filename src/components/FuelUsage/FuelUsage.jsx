@@ -24,32 +24,18 @@ function FuelUsage() {
             <div className='col-auto align-items-center ms-auto justify-content-end'>
               <a href='#'>
                 <span className='container-icon mx-1'>
-                  <img
-                    className='icon img-fluid'
-                    src={Network}
-                    width='20px'
-                    alt=''
-                  />
+                  <span class='material-symbols-outlined'>share</span>
                 </span>
               </a>
               <a href='#'>
                 <span className='container-icon mx-1'>
-                  <img
-                    className='icon img-fluid'
-                    src={Upload}
-                    width='20px'
-                    alt=''
-                  />
+                  <span class='material-symbols-outlined'>ios_share</span>
                 </span>
               </a>
+
               <a href='#'>
                 <span className='container-icon mx-1'>
-                  <img
-                    className='icon img-fluid'
-                    src={Edit}
-                    width='20px'
-                    alt=''
-                  />
+                  <span class='material-symbols-outlined'>edit</span>
                 </span>
               </a>
             </div>

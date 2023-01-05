@@ -136,18 +136,22 @@ export default function Navbar() {
               </form>
             </div>
           </div>
-          <div className='d-flex align-items-center'>
+          <div className='action-icons d-flex align-items-center'>
             <a className='p-3 ms-3' alt=''>
-              <div className='badge-container'>
-                <img src={Notification} alt='Notifications icon' width='20px' />
+              <div className='container-icon badge-container'>
+                <span class='material-symbols-outlined'>notifications</span>
                 <div className='icon-badge'>8</div>
               </div>
             </a>
-            <a className='p-3' alt=''>
-              <img src={User} alt='User icon' width='25px' />
+            <a href='#'>
+              <span className='container-icon p-1'>
+                <span class='material-symbols-outlined user-icon'>person</span>{' '}
+              </span>
             </a>
             <a className='p-3' alt=''>
-              <img src={Settings} alt='Settings icon' width='25px' />
+              <span className='container-icon p-1'>
+                <span class='material-symbols-outlined'>settings</span>{' '}
+              </span>
             </a>
           </div>
         </div>

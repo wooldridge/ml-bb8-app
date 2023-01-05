@@ -151,28 +151,24 @@ tbody tr td {
   background-color: rgba(0, 201, 173, 0.2);
   color: #00c9ad;
 }
-
-.page-link {
-  font-size: 14px;
-}
-
 .page-item.active {
   border: none;
 }
 
 .page-item.active .page-link {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #0052cc;
 }
 
 .page-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  color: #212427;
 }
 
 .page-link {
+  font-size: 14px;
+  color: #929eb1;
   background-color: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.2);
 }
 
 .ai-arrow-right {
@@ -187,10 +183,33 @@ table {
 }
 
 .container-icon {
-  padding: 0 3px 0 3px;
+  color: #929eb1;
+  padding: 3px;
   border-radius: 3px;
-  background-color: #d3d3d3;
+  /* background-color: hsl(217, 17%, 90%); */
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: inline;
+  transition: 0.3s;
+  height: 40px;
+  width: 40px;
+}
+
+.container-icon:hover {
+  color: #212427;
+  background-color: hsl(217, 17%, 90%);
+}
+
+.container-icon:hover .material-symbols-outlined {
+  color: #212427;
+}
+
+.material-symbols-outlined {
+  color: #929eb1;
+  vertical-align: middle;
+  font-size: 20px;
 }
 
 .icon {

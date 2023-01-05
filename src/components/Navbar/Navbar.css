@@ -70,6 +70,18 @@
   padding-left: 5px;
 }
 
+.navbar .action-icons .material-symbols-outlined {
+  font-size: 26px;
+}
+
+.navbar .icon-badge {
+  left: 17px;
+}
+
+.user-icon {
+  font-size: 28px !important;
+}
+
 /* .nav-searchbar {
   padding-left: 25px;
   border-left: solid 1px #272727;

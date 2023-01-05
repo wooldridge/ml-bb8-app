@@ -46,52 +46,29 @@ function Infrastructure() {
             <div className='col-auto ms-auto'>
               <a href='#'>
                 <span className='container-icon mx-1'>
-                  <img
-                    className='icon img-fluid'
-                    src={FolderAdd}
-                    width='20px'
-                    alt=''
-                  />
+                  <span class='material-symbols-outlined'>
+                    create_new_folder
+                  </span>
                 </span>
               </a>
               <a href='#'>
                 <span className='container-icon mx-1'>
-                  <img
-                    className='icon img-fluid'
-                    src={Network}
-                    width='20px'
-                    alt=''
-                  />
+                  <span class='material-symbols-outlined'>share</span>
                 </span>
               </a>
               <a href='#'>
                 <span className='container-icon mx-1'>
-                  <img
-                    className='icon img-fluid'
-                    src={Upload}
-                    width='20px'
-                    alt=''
-                  />
+                  <span class='material-symbols-outlined'>ios_share</span>
                 </span>
               </a>
               <a href='#'>
                 <span className='container-icon mx-1'>
-                  <img
-                    className='icon img-fluid'
-                    src={Edit}
-                    width='20px'
-                    alt=''
-                  />
+                  <span class='material-symbols-outlined'>edit</span>
                 </span>
               </a>
               <a href='#'>
                 <span className='container-icon mx-1'>
-                  <img
-                    className='icon img-fluid'
-                    src={Refresh}
-                    width='20px'
-                    alt=''
-                  />
+                  <span class='material-symbols-outlined'>sync</span>
                 </span>
               </a>
               <img src={Live} className='img-fluid m-1' width='26px' alt='' />
