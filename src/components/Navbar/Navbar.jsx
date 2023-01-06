@@ -84,8 +84,8 @@ export default function Navbar() {
                 </a>
               </div>
             </li>
-            <li className='nav-item d-flex align-items-center active ms-4'>
-              <Link to='/dashboard' className='nav-link'>
+            <li className='nav-item d-flex align-items-center ms-4'>
+              <Link to='/dashboard' className='nav-link nav-link-test active'>
                 <span class='material-symbols-outlined icon-nav icon-nav-dashboard'>
                   bar_chart
                 </span>

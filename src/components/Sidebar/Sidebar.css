@@ -16,12 +16,26 @@
 
 .sidebar-label {
   font-size: 10px;
-  color: #929eb1;
+  color: #212427;
+}
+
+.sidebar-item {
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.sidebar-item:hover {
+  background-color: hsl(217, 17%, 90%);
 }
 
 .sidebar {
   background-color: white;
   width: 80px;
   height: 100vh;
-  border-top: solid 1px #d9d9d9;
+  border-top: solid 4px hsl(217, 17%, 90%);
+  border-radius: 6px;
+}
+
+.sidebar .material-symbols-outlined {
+  font-size: 24px;
 }

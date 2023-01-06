@@ -12,7 +12,7 @@ function RegionMap() {
     <div className='col-lg-4 col-md-12 g-1'>
       <div className='card card-dashboard' style={{ height: '587px' }}>
         <img src={Resize} alt='' width='16px' />
-        <div className='card-body pt-1 ms-3'>
+        <div className='card-body pt-1 mx-3'>
           <div className='row'>
             <div className='card-title col-auto align-middle pt-1'>
               Region map

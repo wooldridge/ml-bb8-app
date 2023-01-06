@@ -82,8 +82,14 @@
   font-size: 28px !important;
 }
 
-/* .nav-searchbar {
-  padding-left: 25px;
-  border-left: solid 1px #272727;
-  border-right: solid 1px #272727;
-} */
+.nav-searchbar {
+  max-width: 400px;
+}
+
+.nav-link-test.active {
+  color: #0052cc !important;
+}
+
+.nav-link-test .material-symbols-outlined {
+  color: #0052cc !important;
+}

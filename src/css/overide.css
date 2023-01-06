@@ -34,7 +34,7 @@ html {
 }
 
 body {
-  background-color: #d9d9d9;
+  background-color: hsl(217, 17%, 90%);
   font-family: 'Poppins';
 }
 
@@ -207,7 +207,7 @@ table {
 }
 
 .material-symbols-outlined {
-  color: #929eb1;
+  color: #212427;
   vertical-align: middle;
   font-size: 20px;
 }

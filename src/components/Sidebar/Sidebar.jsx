@@ -13,19 +13,14 @@ function Sidebar(props) {
           <li>
             <a
               href='#'
-              className='li-requests d-block py-3 text-decoration-none'
+              className='sidebar-item d-block py-3 text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
               onClick={props.handleRequestsClick}
             >
               <div className='badge-container'>
-                <img
-                  src={FileDownload}
-                  className='icon-requests p-2'
-                  style={{ width: '35px' }}
-                  alt=''
-                />
+                <span class='material-symbols-outlined'>place_item</span>
                 <div className='icon-badge-sidebar'>23</div>
               </div>
               <div className='sidebar-label label-requests text-center'>
@@ -36,18 +31,13 @@ function Sidebar(props) {
           <li>
             <a
               href='#'
-              className='li-reports d-block py-3 text-decoration-none'
+              className='sidebar-item d-block py-3 text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
             >
               <div className='badge-container'>
-                <img
-                  src={Statistics}
-                  className='icon-reports p-2'
-                  style={{ width: '35px' }}
-                  alt=''
-                />
+                <span class='material-symbols-outlined'>monitoring</span>
                 <div className='icon-badge-sidebar'>23</div>
               </div>
               <div className='sidebar-label label-reports text-center'>
@@ -58,18 +48,13 @@ function Sidebar(props) {
           <li>
             <a
               href='#'
-              className='li-notifications d-block py-3 text-decoration-none'
+              className='sidebar-item d-block py-3 text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
             >
               <div className='badge-container'>
-                <img
-                  src={Megaphone}
-                  className='icon-notifications p-2'
-                  style={{ width: '35px' }}
-                  alt=''
-                />
+                <span class='material-symbols-outlined'>notifications</span>
                 <div className='icon-badge-sidebar'>23</div>
               </div>
               <div className='sidebar-label label-notifications text-center'>
@@ -80,18 +65,13 @@ function Sidebar(props) {
           <li>
             <a
               href='#'
-              className='li-incidents d-block py-3 text-decoration-none'
+              className='sidebar-item d-block py-3 text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
             >
               <div className='badge-container'>
-                <img
-                  src={Warning}
-                  className='icon-incidents p-2'
-                  style={{ width: '35px' }}
-                  alt=''
-                />
+                <span class='material-symbols-outlined'>warning</span>
                 <div className='icon-badge-sidebar'>23</div>
               </div>
               <div className='sidebar-label label-incidents text-center'>
@@ -102,18 +82,13 @@ function Sidebar(props) {
           <li>
             <a
               href='#'
-              className='li-alerts d-block py-3 text-decoration-none'
+              className='sidebar-item d-block py-3 text-decoration-none'
               title='Icon-only'
               data-bs-toggle='tooltip'
               data-bs-placement='right'
             >
               <div className='badge-container'>
-                <img
-                  src={Flag}
-                  className='icon-alerts p-2'
-                  style={{ width: '35px' }}
-                  alt=''
-                />
+                <span class='material-symbols-outlined'>flag</span>
                 <div className='icon-badge-sidebar'>23</div>
               </div>
               <div className='sidebar-label label-alerts text-center'>
