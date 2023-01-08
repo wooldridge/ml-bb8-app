@@ -112,6 +112,27 @@ const deleteUser = async (name) => {
   try {
     const response = await rp(options);
     console.log('User deleted: '.green + name);
+  } catch (err) {
+    if (err.statusCode === 404) {
+      console.error("User does not exist: ".red + name)
+    } else {
+      console.error(err);
+    }
+  }
+}
+
+const deleteRole = async (name) => {
+  const options = {
+    method: 'DELETE',
+    uri: 'http://' + config.host + ':8002/manage/v2/roles/' + name,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    auth: config.auth
+  };
+  try {
+    const response = await rp(options);
+    console.log('Role deleted: '.green + name);
   } catch (error) {
     handleError(error);
   }
@@ -130,6 +151,7 @@ const deleteUser = async (name) => {
       await deleteDatabase(config.databases.content.name);
       await deleteDatabase(config.databases.modules.name);
       await deleteUser(config.user["user-name"]);
+      await deleteRole(config.role["role-name"]);
       console.log(
         '                           TEARDOWN FINISHED                          '.gray.bold.inverse
       );

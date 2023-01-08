@@ -90,8 +90,12 @@ const createREST = async () => {
   try {
     const response = await rp(options);
     console.log('REST instance created at port: '.green + config.rest["rest-api"].port);
-  } catch (error) {
-    handleError(error);
+  } catch (err) {
+    if (err.statusCode === 400) {
+      console.error("REST instance already exists at port: ".red + config.rest["rest-api"].port);
+    } else {
+      handleError(error);
+    }
   }
 }
 
@@ -166,49 +170,43 @@ const createUser = async () => {
   try {
     const response = await rp(options);
     console.log('User created: '.green + config.user["user-name"]);
-  } catch (error) {
-    handleError(error);
+  } catch (err) {
+    if (err.statusCode === 400) {
+      console.error("User already exists: ".red + config.user["user-name"])
+    } else {
+      console.error(err);
+    }
   }
 }
 
-const loadCollections = async () => {
+const loadRecords = async () => {
   // Cycle through documents config 
   config.documents.forEach(async doc => {
     let inputPath = config.path + 'setup/input/' + (doc.path + '/' || '');
     recordFiles = fs.readdirSync(inputPath),
     count = 0;
-    await loadRecords(recordFiles, doc.collection, inputPath);
+    Promise.all([recordFiles.map(file => {
+      let buffer;
+      buffer = fs.readFileSync(inputPath + file);
+      let url = 'http://' + config.host + ':' + config.rest["rest-api"].port + '/v1/documents';
+      let db = '?database=' + config.databases.content.name;
+      let uri = '&uri=/' + doc.collection + '/' + file;
+      let coll = '&collection=' + doc.collection;
+      // let perms = "&perm:rest-writer=read&perm:rest-writer=update&perm:rest-reader=update&perm:rest-admin=read&perm:rest-admin=update&perm:rest-admin=execute&perm:harmonized-reader=read&perm:harmonized-updater=update";
+      let perms = "&perm:rest-writer=read";
+      const options = {
+        method: 'PUT',
+        uri: url + db + uri + coll + perms,
+        body: buffer,
+        auth: config.auth
+      };
+      return rp(options).then(response => {
+        console.log(('Record loaded: ').green + '/' + doc.collection + '/' + file);
+      }, err => {
+        console.error(err);
+      });
+    })]);
   })
-}
-
-const loadRecords = async (files, collection, path) => {
-  let currFile = files.shift();
-  count++;
-  let buffer;
-  buffer = fs.readFileSync(path + currFile);
-  let url = 'http://' + config.host + ':' + config.rest["rest-api"].port + '/v1/documents';
-  let db = '?database=' + config.databases.content.name;
-  let uri = '&uri=/' + collection + '/' + currFile;
-  let coll = '&collection=' + collection;
-  // let perms = "&perm:rest-writer=read&perm:rest-writer=update&perm:rest-reader=update&perm:rest-admin=read&perm:rest-admin=update&perm:rest-admin=execute&perm:harmonized-reader=read&perm:harmonized-updater=update";
-  let perms = "&perm:rest-writer=read";
-
-  const options = {
-    method: 'PUT',
-    uri: url + db + uri + coll + perms,
-    body: buffer,
-    auth: config.auth
-  };
-  try {
-    const response = await rp(options);
-    console.log(('Record loaded: ').green + '/' + collection + '/' + currFile);
-    if (files.length > 0) {
-      await loadRecords(files, collection, path);
-    }
-  } catch (error) {
-    handleError(error);
-  }
-
 }
 
 const loadSearchOptions = async () => {
@@ -231,8 +229,12 @@ const loadSearchOptions = async () => {
   try {
     const response = await rp(options);
     console.log('Module loaded: '.green + '/v1/config/query/search-options');
-  } catch (error) {
-    handleError(error);
+  } catch (err) {
+    if (err.statusCode === 400) {
+      console.error("Module already exists: ".red + config.user["user-name"])
+    } else {
+      console.error(err);
+    }
   }
 }
 
@@ -242,7 +244,6 @@ const start = async () => {
   );
   await createDatabase(config.databases.content.name);
   await createDatabase(config.databases.modules.name);
-  await getHost();
   await createForest(config.databases.content.name);
   await createForest(config.databases.modules.name);
   await createREST();
@@ -250,11 +251,13 @@ const start = async () => {
   await createXDBC();
   await createRole();
   await createUser();
-  console.log('Loading records...'.green);
-  await loadCollections();
-  await loadSearchOptions();
+  console.log('Loading data...'.green);
+  await Promise.all([
+    loadRecords(),
+    loadSearchOptions()
+  ]);
   console.log(
-    '                            SETUP FINISHED                            '.gray.bold.inverse
+      '                            SETUP FINISHED                            '.gray.bold.inverse
   );
 }
 
