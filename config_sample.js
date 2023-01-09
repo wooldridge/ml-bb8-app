@@ -4,9 +4,6 @@ config.project = {
   name: "ml-bb8-app"
 };
 
-// Path to project root
-config.path = "/PATH/TO/ml-bb8-app/"; // include trailing "/"
-
 // Admin privileges for MarkLogic setup
 config.auth = {
   user: 'USERNAME',

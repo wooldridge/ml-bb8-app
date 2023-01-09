@@ -9,7 +9,7 @@
 
 1. Copy `config_sample.js` and save as `config.js` in project root.
 
-2. Edit `config.js` for your environment. At a minimum, edit `config.path` to point to your project and `config.auth` for your MarkLogic Server.
+2. Edit `config.js` for your environment. At a minimum, edit `config.auth` for your MarkLogic Server.
 
 3. In a new terminal, install the project dependencies from the project root using npm:
 ```

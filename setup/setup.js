@@ -182,7 +182,7 @@ const createUser = async () => {
 const loadRecords = async () => {
   // Cycle through documents config 
   config.documents.forEach(async doc => {
-    let inputPath = config.path + 'setup/input/' + (doc.path + '/' || '');
+    let inputPath = __dirname + '/input/' + (doc.path + '/' || '');
     recordFiles = fs.readdirSync(inputPath),
     count = 0;
     Promise.all([recordFiles.map(file => {
@@ -210,7 +210,7 @@ const loadRecords = async () => {
 }
 
 const loadSearchOptions = async () => {
-  let currFile = config.path + 'setup/search-options.xml';
+  let currFile = __dirname + '/search-options.xml';
   let buffer = fs.readFileSync(currFile);
 
   let bufferString = buffer.toString().replace("%%ENTITYTYPE%%", config.entityType);
